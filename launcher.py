@@ -7,6 +7,9 @@ if not callable(getattr(builtins, '_', None)):
     def identity(x): return x
     builtins.__dict__['_'] = identity
 
+ip_address_list = ['example.com:5555', '192.168.1.7:5555']
+
+
 def main():
 
 #    LOCALE_DIR = os.path.join(os.path.abspath(
@@ -37,8 +40,8 @@ def main():
                         [sg.CBox(_('Music From Cd'),key='ro_NoCd')],
                         [sg.CBox(_('unlock mouse'),key='ro_altinp')]]
 
-    tabMultiplayerRunOpt_layout = [[sg.InputText('127.0.0.1', size=10),sg.InputText('5555', size=4),sg.Button(_('Add')),
-                                   sg.Push(),sg.Listbox(values=('example.com:5555', '192.168.1.7:5555'), size=(30, 10))],[sg.Push(),sg.Button(_('Remove'))]]
+    tabMultiplayerRunOpt_layout = [[sg.InputText('127.0.0.1', size=10,key='ro_mp_ip'),sg.InputText('5555', size=4,key='ro_mp_port'),sg.Button(_('Add'),key='ro_mp_Add'),
+                                   sg.Push(),sg.Listbox(values=ip_address_list, size=(30, 10),key='ro_mp_List')],[sg.Push(),sg.Button(_('Remove'),key='ro_mp_Rempove')]]
 
     tabBasicSettings_layout = [[sg.Column([
                                 [sg.Text(_('Language')),sg.Combo(('English', 'French', 'Spanish', 'Italian', 'Dutch', 'German', 'Polish', 'Japanese', 'Chinese (Simplified)', 'Chinese (Traditional)', 'Swedish', 'German', 'Czech', 'Russian', 'Classical Latin', 'Korean'))],
@@ -97,6 +100,7 @@ def main():
 
     win = sg.Window(_('KeeperFx Launcher'), layout, finalize=True, keep_on_top=True, grab_anywhere=True, no_titlebar=True,margins=(0, 0),background_color='black', right_click_menu=[[''], ['Exit',]])
 
+    win['ro_SkipIntro'].bind('<Button-1>', '+CLICK+')
 
     while True:
         window, event, values = sg.read_all_windows()
@@ -108,6 +112,14 @@ def main():
         if event in (_('Settings'), None):
             win.find_element('runoption_content').update(visible=False)
             win.find_element('settings_content').update(visible=True)
+        if event in ('ro_mp_Add', None):
+            ip_address_list.append(values['ro_mp_ip'] + ':' + values['ro_mp_port'])
+            win.find_element('ro_mp_List').update(ip_address_list)
+        if event in ('ro_mp_Remove', None):
+            ip_address_list.remove(window.Element('ro_mp_Remove').Widget.curselection())
+            win.find_element('ro_mp_List').update(ip_address_list)
+
+
         win.find_element('runoption_text').update(calculateRunOptionText(win))
         
 
@@ -137,8 +149,9 @@ def calculateRunOptionText(win):
     if values['ro_CompChat'] != 'Off':
         text += ' -compuchat ' + values['ro_CompChat']
 
-    if values['ro_CompChat'] != 'Off':
-        text += ' -compuchat ' + values['ro_CompChat']
+ #   if ip_address_list.count > 0:
+  #      text += ' -sessions  ' + ip_address_list
+
         
     return text
 
