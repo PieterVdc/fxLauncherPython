@@ -10,6 +10,46 @@ if not callable(getattr(builtins, '_', None)):
 ip_address_list = ['example.com:5555', '192.168.1.7:5555']
 
 
+human_ids_dict={
+    _('0 (Red)'):0,
+    _('1 (Blue)'):1,
+    _('2 (Green)'):2,
+    _('3 (Yellow)'):3
+    }
+human_ids=list(human_ids_dict.values())
+
+languages_dict={
+    "English"   :"ENG",
+    "Français"  :"FRE",
+    "Deutsch"   :"GER",
+    "Italiano"  :"ITA",
+    "Español"   :"SPA",
+    "Svenska"   :"SWE",
+    "Polski"    :"POL",
+    "Nederlands":"DUT",
+   #"Hungarian" :"HUN",
+    "한국어"    :"KOR", 
+   #"Dansk"     :"DAN",
+   #"Norsk"     :"NOR",
+    "Česky"     :"CZE",
+   #"Arabic"      :"ARA",
+    "Русский"     :"RUS",
+    "日本語"       :"JPN",
+    "简化中国"     :"CHI",
+    "傳統的中國"   :"CHT",
+   #"Portuguese   :"POR",
+   #"Hindi"       :"HIN",
+   #"Bengali"     :"BEN",
+   #"Javanese"    :"JAV",
+    "sermo Latinus":"LAT",
+    }
+
+    
+
+
+languages=list(languages_dict.keys())
+
+
 def main():
 
 #    LOCALE_DIR = os.path.join(os.path.abspath(
@@ -44,7 +84,7 @@ def main():
                                    sg.Push(),sg.Listbox(values=ip_address_list, size=(30, 10),key='ro_mp_List')],[sg.Push(),sg.Button(_('Remove'),key='ro_mp_Rempove')]]
 
     tabBasicSettings_layout = [[sg.Column([
-                                [sg.Text(_('Language')),sg.Combo(('English', 'French', 'Spanish', 'Italian', 'Dutch', 'German', 'Polish', 'Japanese', 'Chinese (Simplified)', 'Chinese (Traditional)', 'Swedish', 'German', 'Czech', 'Russian', 'Classical Latin', 'Korean'))],
+                                [sg.Text(_('Language')),sg.Combo(languages)],
                               ], background_color='#723d01'),
                               sg.Column([])
                               ]]
@@ -58,7 +98,7 @@ def main():
                               ], background_color='#723d01'),
                               sg.Column([
                                 [sg.Push(),sg.Text(_('Computer Chat')),sg.Combo((_('Off'), _('Scarce'), _('Frequent')),default_value=_('Off'), size=10,key='ro_CompChat')],
-                                [sg.Push(),sg.Text(_('Human Id')),sg.Combo((_('0 (Red)'), _('1 (Blue)'),_('2 (Green)'),_('3 (Yellow)')),default_value=_('0 (Red)'), size=10,key='ro_HumanId')],
+                                [sg.Push(),sg.Text(_('Human Id')),sg.Combo(human_ids,default_value=_('0 (Red)'), size=10,key='ro_HumanId')],
                                 [sg.Push(),sg.Text(_('Game Speed')),sg.InputText('20', size=12,key='ro_GameSpeed')],
                                 [sg.Frame(_('Packets'),[[sg.CBox(_('Enabled'))],[sg.Text(_('File Name')),sg.InputText('replay.pck', size=15),],[sg.Radio(_('Load'), "PckLoadSave", default=True, size=10),sg.Radio(_('Save'), "PckLoadSave")]])]
                               ], background_color='#723d01')
