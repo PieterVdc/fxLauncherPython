@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-04-27 19:31+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=cp1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: launcher.py:28
+msgid "Skip Intro"
+msgstr "Intro überspringen"
+
+#: launcher.py:29 launcher.py:41
+msgid "Music From Cd"
+msgstr "Musik von Cd"
+
+#: launcher.py:30
+msgid "unlock mouse"
+msgstr "Maus entsperren"
+
+#: launcher.py:32
+msgid "Add"
+msgstr "Hinzufügen"
+
+#: launcher.py:33
+msgid "Remove"
+msgstr "Entfernen"
+
+#: launcher.py:36
+msgid "Language"
+msgstr "Sprache"
+
+#: launcher.py:44
+msgid "Heavylog"
+msgstr "Heavylog"
+
+#: launcher.py:45
+msgid "No sound"
+msgstr "Kein Ton"
+
+#: launcher.py:46
+msgid "Cheats"
+msgstr "Schummeln"
+
+#: launcher.py:49
+msgid "Computer Chat"
+msgstr "Computer Chat"
+
+#: launcher.py:49
+msgid "Frequent"
+msgstr "Häufig"
+
+#: launcher.py:49
+msgid "Off"
+msgstr "Aus"
+
+#: launcher.py:49
+msgid "Scarce"
+msgstr "Spärlich"
+
+#: launcher.py:50
+msgid "0 (Red)"
+msgstr "0 (Rot)"
+
+#: launcher.py:50
+msgid "1 (Blue)"
+msgstr "1 (Blau)"
+
+#: launcher.py:50
+msgid "2 (Green)"
+msgstr "2 (Grün)"
+
+#: launcher.py:50
+msgid "3 (Yellow)"
+msgstr "3 (Gelb)"
+
+#: launcher.py:50
+msgid "Human Id"
+msgstr "Menschliche Id"
+
+#: launcher.py:51
+msgid "Game Speed"
+msgstr "Spielgeschwindigkeit"
+
+#: launcher.py:52
+msgid "Enabled"
+msgstr "Aktiviert"
+
+#: launcher.py:52
+msgid "File Name"
+msgstr "Dateiname"
+
+#: launcher.py:52
+msgid "Load"
+msgstr "Laden"
+
+#: launcher.py:52
+msgid "Packets"
+msgstr "Pakete"
+
+#: launcher.py:52
+msgid "Save"
+msgstr "Speichern"
+
+#: launcher.py:56 launcher.py:62
+msgid "Basic"
+msgstr "Grundlegend"
+
+#: launcher.py:57
+msgid "Multiplayer"
+msgstr "Mehrspieler"
+
+#: launcher.py:58 launcher.py:63
+msgid "Advanced"
+msgstr "Erweitert"
+
+#: launcher.py:71
+msgid "Run Options"
+msgstr "Ausführungsoptionen"
+
+#: launcher.py:73
+msgid "Settings"
+msgstr "Einstellungen"
+
+#: launcher.py:76
+msgid "Readme"
+msgstr "Liesmich"
+
+#: launcher.py:78
+msgid "Open Log"
+msgstr "Protokoll öffnen"
+
+#: launcher.py:90
+msgid "KeeperFx Launcher"
+msgstr "KeeperFx-Startprogramm"
+
