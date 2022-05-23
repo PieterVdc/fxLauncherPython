@@ -162,9 +162,9 @@ def main():
                                  [sg.Button(_('Settings'),   image_data=settings_disabled_image,  pad=0,border_width=0,font=button_font,button_color=('#f6e1b5','black'))]],pad=0)],
                      [sg.Image(data=left_middle_image,pad=0)],
                      [sg.Image(data=left_left_image,pad=0),
-                     sg.Column([[sg.Button(_('Readme'),  image_data=buttonbg_image,pad=0,border_width=0,font=button_font,image_size=(107,47),button_color=('#f6e1b5','black') )],
+                     sg.Column([[sg.Button(_('Readme'),  image_data=buttonbg_image,pad=0,border_width=0,font=button_font,image_size=(107,47),button_color=('#f6e1b5','black'),key='ReadMeBtn' )],
                                 [sg.Image(data=betweenshortbutton_image,pad=0)],
-                                [sg.Button(_('Open Log'),image_data=buttonbg_image,pad=0,border_width=0,font=button_font,image_size=(107,47),button_color=('#f6e1b5','black'))]],pad=0),
+                                [sg.Button(_('Open Log'),image_data=buttonbg_image,pad=0,border_width=0,font=button_font,image_size=(107,47),button_color=('#f6e1b5','black'),key='openLogBtn')]],pad=0),
                      sg.Image(data=leftright_image,pad=0) ]
                      ],pad=0)
 
@@ -172,7 +172,7 @@ def main():
     top = [sg.Image(data=top_image,pad=0)]
     middle = [left,settings_content,runoption_content]
 
-    bottom = [sg.Image(data=bottom_image,pad=0),sg.Text("defaultTextHere",key='errortext')]
+    bottom = [sg.Image(data=bottom_image,pad=0),sg.Text("defaultTextHere",key='errortext'),sg.Push(),sg.Button(_('Start'),image_data=buttonbg_image,pad=0,border_width=0,font=button_font,image_size=(80,40),button_color=('#f6e1b5','black'),key='StartBtn' )]
     layout = [top,middle,bottom]
 
 
@@ -200,7 +200,14 @@ def main():
         if event in ('ro_mp_Remove', None):
             ip_address_list.remove(values['ro_mp_List'][0])
             win.find_element('ro_mp_List').update(ip_address_list)
-
+        if event in ('ReadMeBtn', None):
+            os.startfile("keeperfx_readme.txt")
+        if event in ('openLogBtn', None):
+            os.startfile("keeperfx.log")
+        if event in ('openLogBtn', None):
+            os.startfile("keeperfx.log")
+        if event in ('StartBtn', None):
+            os.startfile(calculateRunOptionText(values))
 
         win.find_element('runoption_text').update(calculateRunOptionText(values))
         
@@ -238,7 +245,13 @@ def calculateRunOptionText(values):
 
 def check_files(win):
     if not exists("keeperfx.exe"):
-        win.find_element('errortext').update(_('please place file in same folder as your keeperfx installation'))
+        win.find_element('errortext').update(_('please place file in same folder\nas your keeperfx installation'))
+    elif not exists("./data/bluepal.dat"):
+        win.find_element('errortext').update(_('files from orininal missing,\npress install to copy them'))
+        win.find_element('StartBtn').update('install')
+ #   else:
+ #       win.find_element('errortext').update('')
+ #       win.find_element('StartBtn').update('run')
     
 
 
