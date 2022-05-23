@@ -176,7 +176,7 @@ def main():
     layout = [top,middle,bottom]
 
 
-    win = sg.Window(_('KeeperFx Launcher'), layout, finalize=True, keep_on_top=True, grab_anywhere=True, no_titlebar=True,margins=(0, 0),background_color='black', right_click_menu=[[''], ['Exit',]])
+    win = sg.Window(_('KeeperFx Launcher'), layout, finalize=True, keep_on_top=False, grab_anywhere=True, no_titlebar=False,margins=(0, 0),background_color='black', right_click_menu=[[''], ['Exit',]])
 
     win['ro_SkipIntro'].bind('<ButtonRelease-1>', '+CLICK+')
     win['ro_NoCd'].bind('<ButtonRelease-1>', '+CLICK+')
