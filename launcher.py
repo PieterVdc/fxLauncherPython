@@ -119,7 +119,7 @@ def main():
                         [sg.CBox(_('unlock mouse'),key='ro_altinp')]]
 
     tabMultiplayerRunOpt_layout = [[sg.InputText('127.0.0.1', size=10,key='ro_mp_ip'),sg.InputText('5555', size=4,key='ro_mp_port'),sg.Button(_('Add'),key='ro_mp_Add'),
-                                   sg.Push(),sg.Listbox(values=ip_address_list, size=(30, 10),key='ro_mp_List')],[sg.Push(),sg.Button(_('Remove'),key='ro_mp_Rempove')]]
+                                   sg.Push(),sg.Listbox(values=ip_address_list, size=(30, 10),key='ro_mp_List')],[sg.Push(),sg.Button(_('Remove'),key='ro_mp_Remove')]]
 
     tabBasicSettings_layout = [[sg.Column([
                                 [sg.Text(_('Language')),sg.Combo(languages)],
@@ -198,7 +198,7 @@ def main():
             ip_address_list.append(values['ro_mp_ip'] + ':' + values['ro_mp_port'])
             win.find_element('ro_mp_List').update(ip_address_list)
         if event in ('ro_mp_Remove', None):
-            ip_address_list.remove(window.Element('ro_mp_Remove').Widget.curselection())
+            ip_address_list.remove(values['ro_mp_List'][0])
             win.find_element('ro_mp_List').update(ip_address_list)
 
 
