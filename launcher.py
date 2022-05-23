@@ -100,7 +100,9 @@ def main():
 
     win = sg.Window(_('KeeperFx Launcher'), layout, finalize=True, keep_on_top=True, grab_anywhere=True, no_titlebar=True,margins=(0, 0),background_color='black', right_click_menu=[[''], ['Exit',]])
 
-    win['ro_SkipIntro'].bind('<Button-1>', '+CLICK+')
+    win['ro_SkipIntro'].bind('<ButtonRelease-1>', '+CLICK+')
+    win['ro_NoCd'].bind('<ButtonRelease-1>', '+CLICK+')
+    win['ro_altinp'].bind('<ButtonRelease-1>', '+CLICK+')
 
     while True:
         window, event, values = sg.read_all_windows()
@@ -120,7 +122,7 @@ def main():
             win.find_element('ro_mp_List').update(ip_address_list)
 
 
-        win.find_element('runoption_text').update(calculateRunOptionText(win))
+        win.find_element('runoption_text').update(calculateRunOptionText(values))
         
 
 
@@ -128,8 +130,7 @@ def main():
     win.close()
 
 
-def calculateRunOptionText(win):
-    event, values = win.read()
+def calculateRunOptionText(values):
     if values["ro_HvLog"] == True:
         text = 'keeperfx_hvlog.exe'
     else:
