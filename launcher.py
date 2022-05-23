@@ -157,9 +157,9 @@ def main():
 
     
     left = sg.Column([[sg.Column([],size=(27,109),pad=0,background_color='black'),
-                      sg.Column([[sg.Button(_('Run Options'),image_data=runoptions_disabled_image,pad=0,border_width=0,font=button_font,button_color=('#f6e1b5','black'))],
+                      sg.Column([[sg.Button(_('Run Options'),image_data=runoptions_disabled_image,image_size=(149,47),pad=0,border_width=0,font=button_font,button_color=('#f6e1b5','black'))],
                                  [sg.Image(data=betweenTabs_image,        pad=0)],
-                                 [sg.Button(_('Settings'),   image_data=settings_disabled_image,  pad=0,border_width=0,font=button_font,button_color=('#f6e1b5','black'))]],pad=0)],
+                                 [sg.Button(_('Settings'),   image_data=settings_disabled_image,  image_size=(149,47),pad=0,border_width=0,font=button_font,button_color=('#f6e1b5','black'))]],pad=0)],
                      [sg.Image(data=left_middle_image,pad=0)],
                      [sg.Image(data=left_left_image,pad=0),
                      sg.Column([[sg.Button(_('Readme'),  image_data=buttonbg_image,pad=0,border_width=0,font=button_font,image_size=(107,47),button_color=('#f6e1b5','black'),key='ReadMeBtn' )],
@@ -191,9 +191,13 @@ def main():
         if event in (_('Run Options'), None):
             win.find_element('settings_content').update(visible=False)
             win.find_element('runoption_content').update(visible=True)
+            win.find_element(_('Settings')).update(image_data=settings_disabled_image)
+            win.find_element(_('Run Options')).update(image_data=buttonbg_image)
         if event in (_('Settings'), None):
             win.find_element('runoption_content').update(visible=False)
             win.find_element('settings_content').update(visible=True)
+            win.find_element(_('Settings')).update(image_data=buttonbg_image)
+            win.find_element(_('Run Options')).update(image_data=runoptions_disabled_image)
         if event in ('ro_mp_Add', None):
             ip_address_list.append(values['ro_mp_ip'] + ':' + values['ro_mp_port'])
             win.find_element('ro_mp_List').update(ip_address_list)
