@@ -61,8 +61,8 @@ tt_human_id = _("Change human player ID. This allows you to play as blue, green 
 #        _("Packet files (replays) handling. If you wish to save a reply of your game, or load a previously saved one, then use this. Otherwise, set it to 'None' to disable the option. Saved replay will be loadable as long as you won't change any of the game files.")
 #        _("Accept changes."),
 #        _("Abandon changes and close the window.")
-tt_skipintro = 'do not show intro movie on startup'
-tt_nocd = 'loads music from the music folder in your fx directory'
+tt_skipintro = _('do not show intro movie on startup')
+tt_nocd =      _('loads music from the music folder in your fx directory')
 
 
 #tooltips settings
@@ -114,9 +114,24 @@ def main():
     button_font = ("Arial 15 bold")
 
 
-    tabBasicRunOpt_layout =  [[sg.CBox(_('Skip Intro'),key='ro_SkipIntro',tooltip=tt_skipintro)],
-                        [sg.CBox(_('Music From Cd'),key='ro_NoCd',tooltip=tt_nocd)],
-                        [sg.CBox(_('unlock mouse'),key='ro_altinp')]]
+    tabBasicRunOpt_layout = [[sg.Column([[sg.CBox(_('Skip Intro'),   key='ro_SkipIntro',tooltip=tt_skipintro)],
+                                         [sg.CBox(_('Music From Cd'),key='ro_NoCd',tooltip=tt_nocd)],
+                                         [sg.CBox(_('unlock mouse'), key='ro_altinp')],
+                                         [sg.CBox(_('Heavylog'),     key='ro_HvLog',tooltip=tt_heavylog)],
+                                         [sg.CBox(_('No sound'),     key='ro_NoSnd')],
+                                         [sg.CBox(_('Cheats'),       key='ro_Alex')]
+                                        ], background_color='#723d01'),
+                              sg.Column([[sg.Push(),sg.Text(_('Computer Chat')),sg.Combo((_('Off'), _('Scarce'), _('Frequent')),default_value=_('Off'), size=10,key='ro_CompChat')],
+                                         [sg.Push(),sg.Text(_('Human Id')),sg.Combo(human_ids,default_value=_('0 (Red)'), size=10,key='ro_HumanId',tooltip=tt_human_id)],
+                                         [sg.Push(),sg.Text(_('Game Speed')),sg.InputText('20', size=12,key='ro_GameSpeed')],
+                                         [sg.Frame(_('Packets'),[[sg.CBox(_('Enabled'))],[sg.Text(_('File Name')),sg.InputText('replay.pck', size=15),],[sg.Radio(_('Load'), "PckLoadSave", default=True, size=10),sg.Radio(_('Save'), "PckLoadSave")]])]
+                                        ], background_color='#723d01'),
+                              sg.Column([[sg.InputText('127.0.0.1', size=10,key='ro_mp_ip'),sg.InputText('5555', size=4,key='ro_mp_port'),sg.Button(_('Add'),key='ro_mp_Add')],
+                                   [sg.Listbox(values=ip_address_list, size=(20, 5),key='ro_mp_List')],[sg.Push(),sg.Button(_('Remove'),key='ro_mp_Remove')]], background_color='#723d01')
+                                        
+                                        
+                                        
+                                        ]]
 
     tabMultiplayerRunOpt_layout = [[sg.InputText('127.0.0.1', size=10,key='ro_mp_ip'),sg.InputText('5555', size=4,key='ro_mp_port'),sg.Button(_('Add'),key='ro_mp_Add'),
                                    sg.Push(),sg.Listbox(values=ip_address_list, size=(30, 10),key='ro_mp_List')],[sg.Push(),sg.Button(_('Remove'),key='ro_mp_Remove')]]
@@ -129,18 +144,7 @@ def main():
 
     tabAdvancedSettings_layout = [[sg.CBox(_('Setting1'))]]
 
-    tabAdvancedRunOpt_layout = [[sg.Column([
-                                [sg.CBox(_('Heavylog'),key='ro_HvLog',tooltip=tt_heavylog)],
-                                [sg.CBox(_('No sound'),key='ro_NoSnd')],
-                                [sg.CBox(_('Cheats'),key='ro_Alex')],
-                              ], background_color='#723d01'),
-                              sg.Column([
-                                [sg.Push(),sg.Text(_('Computer Chat')),sg.Combo((_('Off'), _('Scarce'), _('Frequent')),default_value=_('Off'), size=10,key='ro_CompChat')],
-                                [sg.Push(),sg.Text(_('Human Id')),sg.Combo(human_ids,default_value=_('0 (Red)'), size=10,key='ro_HumanId',tooltip=tt_human_id)],
-                                [sg.Push(),sg.Text(_('Game Speed')),sg.InputText('20', size=12,key='ro_GameSpeed')],
-                                [sg.Frame(_('Packets'),[[sg.CBox(_('Enabled'))],[sg.Text(_('File Name')),sg.InputText('replay.pck', size=15),],[sg.Radio(_('Load'), "PckLoadSave", default=True, size=10),sg.Radio(_('Save'), "PckLoadSave")]])]
-                              ], background_color='#723d01')
-                              ]]
+    tabAdvancedRunOpt_layout = [[]]
 
     runoption_content = sg.Column([[sg.TabGroup([[sg.Tab(_('Basic'), tabBasicRunOpt_layout), 
                                                   sg.Tab(_('Multiplayer'), tabMultiplayerRunOpt_layout), 
