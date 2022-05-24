@@ -1,9 +1,9 @@
-import PySimpleGUI as sg
+import builtins
 import gettext
 import os
-import builtins
 from os.path import exists
 
+import PySimpleGUI as sg
 
 if not callable(getattr(builtins, '_', None)):
     def identity(x): return x
@@ -18,7 +18,7 @@ human_ids_dict={
     _('2 (Green)'):2,
     _('3 (Yellow)'):3
     }
-human_ids=list(human_ids_dict.values())
+human_ids=list(human_ids_dict.keys())
 
 languages_dict={
     "English"   :"ENG",
@@ -45,8 +45,31 @@ languages_dict={
    #"Javanese"    :"JAV",
     "sermo Latinus":"LAT",
     }
+languages=list(languages_dict.keys())
 
+resolutions = ['1024x600','1024x768','1280x720','1280x1024','1366x768','1536x684','1600x900','1920x1080','2560x1440']
+
+wibble_options_dict={
+    _("On")          :"ON",
+    _("Off")         :"OFF",
+    _("Liquid Only") :"LIQUIDONLY",
+    }
+wibble_options=list(wibble_options_dict.keys())
     
+movie_resize_options_dict={
+    _("On")                   :"ON",
+    _("Off")                  :"OFF",
+    _("Fit")                  :"FIT",
+    _("Stretch")              :"STRETCH",
+    _("Crop")                 :"CROP",
+    _("Pixel Perfect")        :"PIXELPERFECT",
+    _("4 by 3")               :"4BY3",
+    _("4 by 3 Pixel Perfect") :"4BY3PP",
+    }
+movie_resize_options=list(movie_resize_options_dict.keys())
+
+
+
 #tooltips run options
 
 #               _("Command line to run. Here you can type by hand the parameters you wish to use.")
@@ -85,7 +108,7 @@ tt_nocd =      _('loads music from the music folder in your fx directory')
 #_("Change the volume of the Atmospheric sounds effects.")
 #_("Change how often an Atmospheric sound effect is played.")
 
-languages=list(languages_dict.keys())
+
 
 
 def main():
@@ -114,17 +137,17 @@ def main():
     button_font = ("Arial 15 bold")
 
 
-    RunOpt_layout =  [sg.Column([[sg.CBox(_('Skip Intro'),   key='ro_SkipIntro',tooltip=tt_skipintro)],
-                                 [sg.CBox(_('Music From Cd'),key='ro_NoCd',tooltip=tt_nocd)],
-                                 [sg.CBox(_('unlock mouse'), key='ro_altinp')],
-                                 [sg.CBox(_('Heavylog'),     key='ro_HvLog',tooltip=tt_heavylog)],
-                                 [sg.CBox(_('No sound'),     key='ro_NoSnd')],
-                                 [sg.CBox(_('Cheats'),       key='ro_Alex')]
+    RunOpt_layout =  [sg.Column([[sg.CBox(_('Skip Intro'),   key='ro_SkipIntro',tooltip=tt_skipintro,enable_events=True)],
+                                 [sg.CBox(_('Music From Cd'),key='ro_NoCd',tooltip=tt_nocd,enable_events=True)],
+                                 [sg.CBox(_('unlock mouse'), key='ro_altinp',enable_events=True)],
+                                 [sg.CBox(_('Heavylog'),     key='ro_HvLog',tooltip=tt_heavylog,enable_events=True)],
+                                 [sg.CBox(_('No sound'),     key='ro_NoSnd',enable_events=True)],
+                                 [sg.CBox(_('Cheats'),       key='ro_Alex',enable_events=True)]
                                 ], background_color='#723d01'),
-                      sg.Column([[sg.Push(),sg.Text(_('Computer Chat')),sg.Combo((_('Off'), _('Scarce'), _('Frequent')),default_value=_('Off'), size=10,key='ro_CompChat')],
-                                 [sg.Push(),sg.Text(_('Human Id')),sg.Combo(human_ids,default_value=_('0 (Red)'), size=10,key='ro_HumanId',tooltip=tt_human_id)],
-                                 [sg.Push(),sg.Text(_('Game Speed')),sg.InputText('20', size=12,key='ro_GameSpeed')],
-                                 [sg.Frame(_('Packets'),[[sg.CBox(_('Enabled'))],[sg.Text(_('File Name')),sg.InputText('replay.pck', size=15),],[sg.Radio(_('Load'), "PckLoadSave", default=True, size=10),sg.Radio(_('Save'), "PckLoadSave")]])]
+                      sg.Column([[sg.Push(),sg.Text(_('Computer Chat')),sg.Combo((_('Off'), _('Scarce'), _('Frequent')),default_value=_('Off'), size=10,key='ro_CompChat',enable_events=True)],
+                                 [sg.Push(),sg.Text(_('Human Id')),sg.Combo(human_ids,default_value=_('0 (Red)'), size=10,key='ro_HumanId',tooltip=tt_human_id,enable_events=True)],
+                                 [sg.Push(),sg.Text(_('Game Speed')),sg.InputText('20', size=12,key='ro_GameSpeed',enable_events=True)],
+                                 [sg.Frame(_('Packets'),[[sg.CBox(_('Enabled'))],[sg.Text(_('File Name')),sg.InputText('replay.pck', size=15,enable_events=True),],[sg.Radio(_('Load'), "PckLoadSave", default=True, size=10),sg.Radio(_('Save'), "PckLoadSave")]])]
                                 ], background_color='#723d01'),
                       sg.Column([[sg.InputText('127.0.0.1', size=10,key='ro_mp_ip'),sg.InputText('5555', size=4,key='ro_mp_port'),sg.Button(_('Add'),key='ro_mp_Add')],
                                  [sg.Listbox(values=ip_address_list, size=(20, 5),key='ro_mp_List')],[sg.Push(),sg.Button(_('Remove'),key='ro_mp_Remove')]], background_color='#723d01')]
@@ -132,13 +155,17 @@ def main():
 
     tabBasicSettings_layout = [[sg.Column([
                                 [sg.Text(_('Language')),sg.Combo(languages)],
+                                [sg.Text(_('Resolution')),sg.Combo(resolutions)],
+                                [sg.CBox(_('windowed'))],
+                                [sg.Text(_('Wibble')),sg.Combo(wibble_options)],
+                                [sg.Text(_('Resize movies')),sg.Combo(movie_resize_options)],
                               ], background_color='#723d01'),
                               sg.Column([])
                               ]]
 
 
 
-    runoption_content = sg.Column([[sg.Column([RunOpt_layout],size=(522, 265), background_color='#723d01')],
+    runoption_content = sg.Column([[sg.Column([RunOpt_layout],size=(522, 265),pad=0, background_color='#723d01')],
                                                   [sg.InputText('keeperfx.exe -nointro -nocd -alex -sessions 127.0.0.1:5555',do_not_clear = True,key='runoption_text', size=72,pad=0)]],pad=0, key='runoption_content',visible=False)
 
     settings_content = sg.Column([[sg.TabGroup([[sg.Tab(_('Basic'), tabBasicSettings_layout)]], 
@@ -170,9 +197,6 @@ def main():
 
     win = sg.Window(_('KeeperFx Launcher'), layout, finalize=True, keep_on_top=False, grab_anywhere=True, no_titlebar=False,margins=(0, 0),background_color='black', right_click_menu=[[''], ['Exit',]])
 
-    win['ro_SkipIntro'].bind('<ButtonRelease-1>', '+CLICK+')
-    win['ro_NoCd'].bind('<ButtonRelease-1>', '+CLICK+')
-    win['ro_altinp'].bind('<ButtonRelease-1>', '+CLICK+')
 
     check_files(win)
 
