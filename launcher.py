@@ -2,8 +2,11 @@ import builtins
 import gettext
 import os
 from os.path import exists
+import configparser
 
+from bidict import bidict
 import PySimpleGUI as sg
+from configparser import ConfigParser
 
 if not callable(getattr(builtins, '_', None)):
     def identity(x): return x
@@ -46,6 +49,7 @@ languages_dict={
     "sermo Latinus":"LAT",
     }
 languages=list(languages_dict.keys())
+bidict_languages = bidict(languages_dict)
 
 resolutions = ['1024x600','1024x768','1280x720','1280x1024','1366x768','1536x684','1600x900','1920x1080','2560x1440']
 
@@ -168,7 +172,7 @@ def main():
 
 
     tabBasicSettings_layout = [[sg.Column([
-                                [sg.Push(),sg.Text(_('Language'),tooltip=tt_language),sg.Combo(languages,tooltip=tt_language)],
+                                [sg.Push(),sg.Text(_('Language'),tooltip=tt_language),sg.Combo(languages,tooltip=tt_language,key='set_lang')],
                                 [sg.Push(),sg.Text(_('Resolution')),sg.Combo(resolutions)],
                                 [sg.Push(),sg.CBox(_('windowed'),tooltip=tt_fullscreen)],
                                 [sg.Push(),sg.Text(_('Wibble'),  tooltip=tt_wible),sg.Combo(wibble_options,tooltip=tt_wible)],
@@ -219,6 +223,7 @@ def main():
 
 
     check_files(win)
+    load_config(win)
 
     while True:
         window, event, values = sg.read_all_windows()
@@ -280,7 +285,6 @@ def calculateRunOptionText(values):
  #   if ip_address_list.count > 0:
   #      text += ' -sessions  ' + ip_address_list
 
-        
     return text
 
 def check_files(win):
@@ -293,7 +297,16 @@ def check_files(win):
  #       win.find_element('errortext').update('')
  #       win.find_element('StartBtn').update('run')
     
+def load_config(win):
+    parser = ConfigParser()
+    with open("./keeperfx.cfg") as stream:
+        parser.read_string("[top]\n" + stream.read())  # trick config parser to treat cfg as an ini
+        config = parser['top']
+        lang = bidict_languages.inverse[config["LANGUAGE"]]
+        win.find_element('set_lang').update(lang)
 
+
+    
 
 
 
