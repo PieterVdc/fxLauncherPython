@@ -114,8 +114,8 @@ tt_wible    = _("Wibble twists and turns the straight blocks making up the dunge
 tt_censor   =_("Enabling censorship will make only evil creatures to have blood, and will restrict death effect with exploding flesh.\nOriginally, this was enabled in german language version.")
 tt_mouse_sen =_("Increasing sensitivity will speed up the mouse in the game. This may also make the mouse less accurate, so be careful!\n Default value is 100; you can increase or decrease it at your will, but sometimes it may be better to change this setting in your OS.")
 #_("Captured screens can be saved in \"scrshots\" folder by pressing Shift+C during the game or inside menu. The HSI format isn't very popular nowadays, so you probably want to select BMP, as most graphics tools can open it.")
-tt_fullscreen =_("Select whether the game should run in full screen, or as a window. Full screen is recommended.\nIf you've chosen window, you may want to modify input options to disallow the game to control the mouse completely.")
-#_("Write changes to \"keeperfx.cfg\" file.")
+tt_fullscreen    =_("Select whether the game should run in full screen, or as a window. Full screen is recommended.\nIf you've chosen window, you may want to modify input options to disallow the game to control the mouse completely.")
+tt_save_settings =_("Write changes to \"keeperfx.cfg\" file.")
 #_("Abandon changes and close the window.")
 #_("Double the size of the cinematics (like the intro movie) from 320x200 to 640x400 pixels")
 tt_atmos     =_("Enabling Atmospheric sounds will have the game play random background sound effects, like drips of water and screams of horror, to set the mood.")
@@ -177,9 +177,11 @@ def main():
                                 [sg.Push(),sg.CBox(_('Censorship') ,enable_events=True,tooltip=tt_censor)],
                                 
                               ], background_color='#723d01'),
-                              sg.Column([[sg.Frame(_('Atmos'),[[sg.Text(_('Frequency'),  tooltip=tt_atmos    ),sg.Combo(atmos_sound_options,tooltip=tt_atmos)],
-                                                      [sg.Text(_('Volume'   ),  tooltip=tt_atmos_vol),sg.Combo(atmos_sound_volumes,tooltip=tt_atmos_vol)]])]])
-                              ]]
+                              sg.Column([[sg.Frame(_('Atmospheric Sound'),[[sg.Text(_('Frequency'),  tooltip=tt_atmos    ),sg.Combo(atmos_sound_options,tooltip=tt_atmos)],
+                                                      [sg.Text(_('Volume'   ),  tooltip=tt_atmos_vol),sg.Combo(atmos_sound_volumes,tooltip=tt_atmos_vol)]])]], background_color='#723d01')],
+                                [sg.Push(),sg.Button(_('Save'),tooltip=tt_save_settings)]
+                                                      
+                                                      ]
 
 
 
