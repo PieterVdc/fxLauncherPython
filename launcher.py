@@ -23,7 +23,7 @@ human_ids_dict={
     }
 human_ids=list(human_ids_dict.keys())
 
-languages_dict={
+dict_languages={
     "English"   :"ENG",
     "Français"  :"FRE",
     "Deutsch"   :"GER",
@@ -48,8 +48,8 @@ languages_dict={
    #"Javanese"    :"JAV",
     "sermo Latinus":"LAT",
     }
-languages=list(languages_dict.keys())
-bidict_languages = bidict(languages_dict)
+languages=list(dict_languages.keys())
+inv_dict_languages = bidict(dict_languages).inverse
 
 resolutions = ['1024x600','1024x768','1280x720','1280x1024','1366x768','1536x684','1600x900','1920x1080','2560x1440']
 
@@ -59,8 +59,9 @@ wibble_options_dict={
     _("Liquid Only") :"LIQUIDONLY",
     }
 wibble_options=list(wibble_options_dict.keys())
+inv_dict_wibble = bidict(dict_languages).inverse
     
-movie_resize_options_dict={
+dict_movie_resize_options={
     _("On")                   :"ON",
     _("Off")                  :"OFF",
     _("Fit")                  :"FIT",
@@ -70,7 +71,8 @@ movie_resize_options_dict={
     _("4 by 3")               :"4BY3",
     _("4 by 3 Pixel Perfect") :"4BY3PP",
     }
-movie_resize_options=list(movie_resize_options_dict.keys())
+movie_resize_options=list(dict_movie_resize_options.keys())
+inv_dict_movie_resize_options = bidict(dict_movie_resize_options).inverse
 
 atmos_sound_options_dict={
     _("Off")                  :"OFF",
@@ -86,6 +88,13 @@ atmos_sound_volumes_dict={
     _("High")                 :"HIGH",
     }
 atmos_sound_volumes=list(atmos_sound_volumes_dict.keys())
+
+dict_bool={
+    _("ON")    :True,
+    _("OFF")   :False
+    }
+inv_dict_bool = bidict(dict_bool).inverse
+
 
 #tooltips run options
 
@@ -106,19 +115,20 @@ tt_nocd =      _('loads music from the music folder in your fx directory')
 
 
 #tooltips settings
-tt_language = _("Here you can select your language translation. This will affect the in-game messages, but also speeches during the game.\nNote that some campaigns may not support your language; in this case default one will be used.")
-tt_wible    = _("Wibble twists and turns the straight blocks making up the dungeon keeper world.\nTurn it off to get straight lines. Choose \"liquid only\" to still get waves in lava and water.")
-tt_censor   =_("Enabling censorship will make only evil creatures to have blood, and will restrict death effect with exploding flesh.\nOriginally, this was enabled in german language version.")
-tt_mouse_sen =_("Increasing sensitivity will speed up the mouse in the game. This may also make the mouse less accurate, so be careful!\n Default value is 100; you can increase or decrease it at your will, but sometimes it may be better to change this setting in your OS.")
+tt_language      = _("Here you can select your language translation. This will affect the in-game messages, but also speeches during the game.\nNote that some campaigns may not support your language; in this case default one will be used.")
+tt_wible         = _("Wibble twists and turns the straight blocks making up the dungeon keeper world.\nTurn it off to get straight lines. Choose \"liquid only\" to still get waves in lava and water.")
+tt_censor        =_("Enabling censorship will make only evil creatures to have blood, and will restrict death effect with exploding flesh.\nOriginally, this was enabled in german language version.")
+tt_mouse_sen     =_("Increasing sensitivity will speed up the mouse in the game. This may also make the mouse less accurate, so be careful!\n Default value is 100; you can increase or decrease it at your will, but sometimes it may be better to change this setting in your OS.")
 tt_fullscreen    =_("Select whether the game should run in full screen, or as a window. Full screen is recommended.\nIf you've chosen window, you may want to modify input options to disallow the game to control the mouse completely.")
 tt_save_settings =_("Write changes to \"keeperfx.cfg\" file.")
-tt_atmos     =_("Enabling Atmospheric sounds will have the game play random background sound effects, like drips of water and screams of horror, to set the mood.")
-tt_atmos_vol =_("Change the volume of the Atmospheric sounds effects.")
+tt_atmos         =_("Enabling Atmospheric sounds will have the game play random background sound effects, like drips of water and screams of horror, to set the mood.")
+tt_atmos_vol     =_("Change the volume of the Atmospheric sounds effects.")
 tt_lock_cursorpos   = _("Overwrite 'altinput' mode in possession to keep the cursor locked in possession.")
 tt_freezelostfocus  = _('The game freezes when the window loses focus. Disable to keep playing in background.')
 tt_pausemusic       = _('When the game is paused, pause the music too.')
 tt_mutelostfocus    = _('When the window loses focus without freezing, still mute the game audio.')
 tt_unlockcuronpause = _('When pausing, the game will release the mouse cursor to use on other windows.')
+tt_resizemov        = _('Configures how the movies are displayed.')
 
 
 def main():
@@ -148,14 +158,14 @@ def main():
 
 
     RunOpt_layout =  [sg.Column([[sg.CBox(_('Skip Intro'),   key='ro_SkipIntro',tooltip=tt_skipintro,enable_events=True)],
-                                 [sg.CBox(_('Music From Cd'),key='ro_NoCd',tooltip=tt_nocd,enable_events=True)],
-                                 [sg.CBox(_('unlock mouse'), key='ro_altinp',enable_events=True)],
-                                 [sg.CBox(_('Heavylog'),     key='ro_HvLog',tooltip=tt_heavylog,enable_events=True)],
-                                 [sg.CBox(_('No sound'),     key='ro_NoSnd',enable_events=True)],
-                                 [sg.CBox(_('Cheats'),       key='ro_Alex',enable_events=True)]
+                                 [sg.CBox(_('Music From Cd'),key='ro_NoCd',     tooltip=tt_nocd,     enable_events=True)],
+                                 [sg.CBox(_('unlock mouse'), key='ro_altinp',                        enable_events=True)],
+                                 [sg.CBox(_('Heavylog'),     key='ro_HvLog',    tooltip=tt_heavylog, enable_events=True)],
+                                 [sg.CBox(_('No sound'),     key='ro_NoSnd',                         enable_events=True)],
+                                 [sg.CBox(_('Cheats'),       key='ro_Alex',                          enable_events=True)]
                                 ], background_color='#723d01'),
                       sg.Column([[sg.Push(),sg.Text(_('Computer Chat')),sg.Combo((_('Off'), _('Scarce'), _('Frequent')),default_value=_('Off'), size=10,key='ro_CompChat',enable_events=True)],
-                                 [sg.Push(),sg.Text(_('Human Id')),sg.Combo(human_ids,default_value=_('0 (Red)'), size=10,key='ro_HumanId',tooltip=tt_human_id,enable_events=True)],
+                                 [sg.Push(),sg.Text(_('Human Id')),     sg.Combo(human_ids,default_value=_('0 (Red)'), size=10,key='ro_HumanId',tooltip=tt_human_id,enable_events=True)],
                                  [sg.Push(),sg.Text(_('Game Speed')),sg.InputText('20', size=12,key='ro_GameSpeed',enable_events=True)],
                                  [sg.Frame(_('Packets'),[[sg.CBox(_('Enabled'))],[sg.Text(_('File Name')),sg.InputText('replay.pck', size=15,enable_events=True),],[sg.Radio(_('Load'), "PckLoadSave", default=True, size=10),sg.Radio(_('Save'), "PckLoadSave")]])]
                                 ], background_color='#723d01'),
@@ -164,23 +174,23 @@ def main():
 
 
     tabBasicSettings_layout = [[sg.Column([
-                                [sg.Push(),sg.Text(_('Language'),tooltip=tt_language),sg.Combo(languages,tooltip=tt_language,key='set_lang', size=12)],
-                                [sg.Push(),sg.Text(_('Resolution')),sg.Combo(resolutions, size=12)],
-                                [sg.Push(),sg.CBox(_('windowed'),tooltip=tt_fullscreen)],
-                                [sg.Push(),sg.Text(_('Wibble'),  tooltip=tt_wible),sg.Combo(wibble_options,tooltip=tt_wible, size=12)],
-                                [sg.Push(),sg.Text(_('Resize movies')),sg.Combo(movie_resize_options, size=12)],
-                                [sg.Push(),sg.Text(_('Mouse sensitivity'),tooltip=tt_mouse_sen),sg.InputText('100',tooltip=tt_mouse_sen, size=12)],
-                                [sg.Push(),sg.CBox(_('Censorship') ,enable_events=True,tooltip=tt_censor)],
+                                [sg.Push(),sg.Text(_('Language'),         tooltip=tt_language),   sg.Combo(languages,            tooltip=tt_language, size=12,key='setting_lang')],
+                                [sg.Push(),sg.Text(_('Resolution')),                              sg.Combo(resolutions,                               size=12,key='setting_res')],
+                                [sg.Push(),sg.CBox(_('windowed'),         tooltip=tt_fullscreen                                                              ,key='setting_wind' )],
+                                [sg.Push(),sg.Text(_('Wibble'),           tooltip=tt_wible),      sg.Combo(wibble_options,       tooltip=tt_wible,    size=12,key='setting_wibl' )],
+                                [sg.Push(),sg.Text(_('Resize movies'),    tooltip=tt_resizemov),  sg.Combo(movie_resize_options, tooltip=tt_resizemov,size=12,key='setting_movr')],
+                                [sg.Push(),sg.Text(_('Mouse sensitivity'),tooltip=tt_mouse_sen),  sg.InputText('100',            tooltip=tt_mouse_sen,size=12,key='setting_mousen')],
+                                [sg.Push(),sg.CBox(_('Censorship'),       tooltip=tt_censor                                                                  ,key='setting_cens')],
                                 
                               ], background_color='#723d01'),
                               sg.Column([[sg.Frame(_('Atmospheric Sound'),[[sg.Text(_('Frequency'),  tooltip=tt_atmos    ),sg.Combo(atmos_sound_options,tooltip=tt_atmos)],
                                                       [sg.Text(_('Volume'   ),  tooltip=tt_atmos_vol),sg.Combo(atmos_sound_volumes,tooltip=tt_atmos_vol)]])],
                                                       
-                                         [sg.CBox(_('Lock cursor in possession'),tooltip=tt_lock_cursorpos)],
-                                         [sg.CBox(_('Freeze on lost focus'),     tooltip=tt_freezelostfocus)],
-                                         [sg.CBox(_('pause music on pause'),     tooltip=tt_pausemusic)],
-                                         [sg.CBox(_('mute on lost focus'),       tooltip=tt_mutelostfocus)],
-                                         [sg.CBox(_('unlock cursor on pause'),   tooltip=tt_unlockcuronpause)],
+                                         [sg.CBox(_('Lock cursor in possession'),tooltip=tt_lock_cursorpos  ,key='setting_lckcurpos')],
+                                         [sg.CBox(_('Freeze on lost focus'),     tooltip=tt_freezelostfocus ,key='setting_frzlstfoc')],
+                                         [sg.CBox(_('pause music on pause'),     tooltip=tt_pausemusic      ,key='setting_pausmusic')],
+                                         [sg.CBox(_('mute on lost focus'),       tooltip=tt_mutelostfocus   ,key='setting_mutelstfc')],
+                                         [sg.CBox(_('unlock cursor on pause'),   tooltip=tt_unlockcuronpause,key='setting_unlcrpaus')],
                                         ], background_color='#723d01')],
                                 [sg.Push(),sg.Button(_('Save'),tooltip=tt_save_settings)]
                                                       
@@ -256,9 +266,6 @@ def main():
             os.startfile(calculateRunOptionText(values))
 
         win.find_element('runoption_text').update(calculateRunOptionText(values))
-        
-
-
 
     win.close()
 
@@ -303,8 +310,20 @@ def load_config(win):
     with open("./keeperfx.cfg") as stream:
         parser.read_string("[top]\n" + stream.read())  # trick config parser to treat cfg as an ini
         config = parser['top']
-        lang = bidict_languages.inverse[config["LANGUAGE"]]
-        win.find_element('set_lang').update(lang)
+        win.find_element('setting_lang').update(inv_dict_languages[config["LANGUAGE"]])
+        win.find_element('setting_res').update(config["INGAME_RES"]) #TODO cut part off string
+        win.find_element('setting_wind').update(config["INGAME_RES"].count("w") > 0)
+   #     win.find_element('setting_wibl').update(inv_dict_wibble[config["WIBBLE"]])
+   #    win.find_element('setting_movr').update(inv_dict_movie_resize_options[config["RESIZE_MOVIES"]])
+   #    win.find_element('setting_mousen').update(config["POINTER_SENSITIVITY"])
+
+   #    win.find_element('setting_cens').update(inv_dict_bool[config["CENSORSHIP"]])
+   #    win.find_element('setting_lckcurpos').update(inv_dict_bool[config["LOCK_CURSOR_IN_POSSESSION"]])
+   #    win.find_element('setting_frzlstfoc').update(inv_dict_bool[config["FREEZE_GAME_ON_FOCUS_LOST"]])
+   #    win.find_element('setting_pausmusic').update(inv_dict_bool[config["PAUSE_MUSIC_WHEN_GAME_PAUSED"]])
+   #    win.find_element('setting_mutelstfc').update(inv_dict_bool[config["MUTE_AUDIO_ON_FOCUS_LOST"]])
+   #    win.find_element('setting_unlcrpaus').update(inv_dict_bool[config["UNLOCK_CURSOR_WHEN_GAME_PAUSED"]])
+
 
 
     
