@@ -106,27 +106,19 @@ tt_nocd =      _('loads music from the music folder in your fx directory')
 
 
 #tooltips settings
-
-#_(""),
-#_("Select up to four resolutions. Original resolutions are 320x200 and 640x400; Select the native resolution of your monitor, or something with the same aspect ratio. Switch between selected resolutions by pressing Alt+R during the game.")
-#_("Here you can type your own resolution. Use \"WIDTHxHEIGHTxCOLOUR\" scheme. Replace last \"x\" with \"w\" for windowed mode. You can select max. 4 resolutions.")
-#_("Screen resolution at which movies (ie. intro) will be played. Original is 320x200, and any higher resolution will make movie window smaller. Still, 640x480x32 is recommended, for compatibility.")
-#_("Screen resolution at which game menu is displayed. Original is 640x480 and it is recommended to select 640x480x32. Larger resolutions will make the menu smaller at center of the screen.")
-#_("Resolution used in case of screen setup failure. If the game cannot enter one of the selected resolutions (ie. in-game resolution), it will try to fall back into this resolution. 640x480x32 is recommended.")
 tt_language = _("Here you can select your language translation. This will affect the in-game messages, but also speeches during the game.\nNote that some campaigns may not support your language; in this case default one will be used.")
 tt_wible    = _("Wibble twists and turns the straight blocks making up the dungeon keeper world.\nTurn it off to get straight lines. Choose \"liquid only\" to still get waves in lava and water.")
 tt_censor   =_("Enabling censorship will make only evil creatures to have blood, and will restrict death effect with exploding flesh.\nOriginally, this was enabled in german language version.")
 tt_mouse_sen =_("Increasing sensitivity will speed up the mouse in the game. This may also make the mouse less accurate, so be careful!\n Default value is 100; you can increase or decrease it at your will, but sometimes it may be better to change this setting in your OS.")
-#_("Captured screens can be saved in \"scrshots\" folder by pressing Shift+C during the game or inside menu. The HSI format isn't very popular nowadays, so you probably want to select BMP, as most graphics tools can open it.")
 tt_fullscreen    =_("Select whether the game should run in full screen, or as a window. Full screen is recommended.\nIf you've chosen window, you may want to modify input options to disallow the game to control the mouse completely.")
 tt_save_settings =_("Write changes to \"keeperfx.cfg\" file.")
-#_("Abandon changes and close the window.")
-#_("Double the size of the cinematics (like the intro movie) from 320x200 to 640x400 pixels")
 tt_atmos     =_("Enabling Atmospheric sounds will have the game play random background sound effects, like drips of water and screams of horror, to set the mood.")
 tt_atmos_vol =_("Change the volume of the Atmospheric sounds effects.")
-#_("Change how often an Atmospheric sound effect is played.")
-
-
+tt_lock_cursorpos   = _("Overwrite 'altinput' mode in possession to keep the cursor locked in possession.")
+tt_freezelostfocus  = _('The game freezes when the window loses focus. Disable to keep playing in background.')
+tt_pausemusic       = _('When the game is paused, pause the music too.')
+tt_mutelostfocus    = _('When the window loses focus without freezing, still mute the game audio.')
+tt_unlockcuronpause = _('When pausing, the game will release the mouse cursor to use on other windows.')
 
 
 def main():
@@ -172,20 +164,29 @@ def main():
 
 
     tabBasicSettings_layout = [[sg.Column([
-                                [sg.Push(),sg.Text(_('Language'),tooltip=tt_language),sg.Combo(languages,tooltip=tt_language,key='set_lang')],
-                                [sg.Push(),sg.Text(_('Resolution')),sg.Combo(resolutions)],
+                                [sg.Push(),sg.Text(_('Language'),tooltip=tt_language),sg.Combo(languages,tooltip=tt_language,key='set_lang', size=12)],
+                                [sg.Push(),sg.Text(_('Resolution')),sg.Combo(resolutions, size=12)],
                                 [sg.Push(),sg.CBox(_('windowed'),tooltip=tt_fullscreen)],
-                                [sg.Push(),sg.Text(_('Wibble'),  tooltip=tt_wible),sg.Combo(wibble_options,tooltip=tt_wible)],
-                                [sg.Push(),sg.Text(_('Resize movies')),sg.Combo(movie_resize_options)],
-                                [sg.Push(),sg.Text(_('Mouse sensitivity'),tooltip=tt_mouse_sen),sg.InputText('100', size=12,tooltip=tt_mouse_sen)],
+                                [sg.Push(),sg.Text(_('Wibble'),  tooltip=tt_wible),sg.Combo(wibble_options,tooltip=tt_wible, size=12)],
+                                [sg.Push(),sg.Text(_('Resize movies')),sg.Combo(movie_resize_options, size=12)],
+                                [sg.Push(),sg.Text(_('Mouse sensitivity'),tooltip=tt_mouse_sen),sg.InputText('100',tooltip=tt_mouse_sen, size=12)],
                                 [sg.Push(),sg.CBox(_('Censorship') ,enable_events=True,tooltip=tt_censor)],
                                 
                               ], background_color='#723d01'),
                               sg.Column([[sg.Frame(_('Atmospheric Sound'),[[sg.Text(_('Frequency'),  tooltip=tt_atmos    ),sg.Combo(atmos_sound_options,tooltip=tt_atmos)],
-                                                      [sg.Text(_('Volume'   ),  tooltip=tt_atmos_vol),sg.Combo(atmos_sound_volumes,tooltip=tt_atmos_vol)]])]], background_color='#723d01')],
+                                                      [sg.Text(_('Volume'   ),  tooltip=tt_atmos_vol),sg.Combo(atmos_sound_volumes,tooltip=tt_atmos_vol)]])],
+                                                      
+                                         [sg.CBox(_('Lock cursor in possession'),tooltip=tt_lock_cursorpos)],
+                                         [sg.CBox(_('Freeze on lost focus'),     tooltip=tt_freezelostfocus)],
+                                         [sg.CBox(_('pause music on pause'),     tooltip=tt_pausemusic)],
+                                         [sg.CBox(_('mute on lost focus'),       tooltip=tt_mutelostfocus)],
+                                         [sg.CBox(_('unlock cursor on pause'),   tooltip=tt_unlockcuronpause)],
+                                        ], background_color='#723d01')],
                                 [sg.Push(),sg.Button(_('Save'),tooltip=tt_save_settings)]
                                                       
                                                       ]
+
+
 
 
 
