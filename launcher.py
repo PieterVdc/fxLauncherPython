@@ -59,17 +59,17 @@ wibble_options_dict={
     _("Liquid Only") :"LIQUIDONLY",
     }
 wibble_options=list(wibble_options_dict.keys())
-inv_dict_wibble = bidict(dict_languages).inverse
+inv_dict_wibble = bidict(wibble_options_dict).inverse
     
 dict_movie_resize_options={
-    _("On")                   :"ON",
-    _("Off")                  :"OFF",
-    _("Fit")                  :"FIT",
-    _("Stretch")              :"STRETCH",
-    _("Crop")                 :"CROP",
-    _("Pixel Perfect")        :"PIXELPERFECT",
-    _("4 by 3")               :"4BY3",
-    _("4 by 3 Pixel Perfect") :"4BY3PP",
+    _("On")                 :"ON",
+    _("Off")                :"OFF",
+    _("Fit")                :"FIT",
+    _("Stretch")            :"STRETCH",
+    _("Crop")               :"CROP",
+    _("Pixel Perfect")      :"PIXELPERFECT",
+    _("4by3")               :"4BY3",
+    _("4by3 Pixel Perfect") :"4BY3PP",
     }
 movie_resize_options=list(dict_movie_resize_options.keys())
 inv_dict_movie_resize_options = bidict(dict_movie_resize_options).inverse
@@ -90,8 +90,8 @@ atmos_sound_volumes_dict={
 atmos_sound_volumes=list(atmos_sound_volumes_dict.keys())
 
 dict_bool={
-    _("ON")    :True,
-    _("OFF")   :False
+    True  : "ON",
+    False : "OFF"
     }
 inv_dict_bool = bidict(dict_bool).inverse
 
@@ -313,16 +313,16 @@ def load_config(win):
         win.find_element('setting_lang').update(inv_dict_languages[config["LANGUAGE"]])
         win.find_element('setting_res').update(config["INGAME_RES"]) #TODO cut part off string
         win.find_element('setting_wind').update(config["INGAME_RES"].count("w") > 0)
-   #     win.find_element('setting_wibl').update(inv_dict_wibble[config["WIBBLE"]])
-   #    win.find_element('setting_movr').update(inv_dict_movie_resize_options[config["RESIZE_MOVIES"]])
-   #    win.find_element('setting_mousen').update(config["POINTER_SENSITIVITY"])
+        win.find_element('setting_wibl').update(inv_dict_wibble[config["WIBBLE"]])
+        win.find_element('setting_movr').update(inv_dict_movie_resize_options[config["RESIZE_MOVIES"]])
+        win.find_element('setting_mousen').update(config["POINTER_SENSITIVITY"])
 
-   #    win.find_element('setting_cens').update(inv_dict_bool[config["CENSORSHIP"]])
-   #    win.find_element('setting_lckcurpos').update(inv_dict_bool[config["LOCK_CURSOR_IN_POSSESSION"]])
-   #    win.find_element('setting_frzlstfoc').update(inv_dict_bool[config["FREEZE_GAME_ON_FOCUS_LOST"]])
-   #    win.find_element('setting_pausmusic').update(inv_dict_bool[config["PAUSE_MUSIC_WHEN_GAME_PAUSED"]])
-   #    win.find_element('setting_mutelstfc').update(inv_dict_bool[config["MUTE_AUDIO_ON_FOCUS_LOST"]])
-   #    win.find_element('setting_unlcrpaus').update(inv_dict_bool[config["UNLOCK_CURSOR_WHEN_GAME_PAUSED"]])
+        win.find_element('setting_cens').update(     inv_dict_bool[config["CENSORSHIP"]])
+        win.find_element('setting_lckcurpos').update(inv_dict_bool[config["LOCK_CURSOR_IN_POSSESSION"]])
+        win.find_element('setting_frzlstfoc').update(inv_dict_bool[config["FREEZE_GAME_ON_FOCUS_LOST"]])
+        win.find_element('setting_pausmusic').update(inv_dict_bool[config["PAUSE_MUSIC_WHEN_GAME_PAUSED"]])
+        win.find_element('setting_mutelstfc').update(inv_dict_bool[config["MUTE_AUDIO_ON_FOCUS_LOST"]])
+        win.find_element('setting_unlcrpaus').update(inv_dict_bool[config["UNLOCK_CURSOR_WHEN_GAME_PAUSED"]])
 
 
 
