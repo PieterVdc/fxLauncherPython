@@ -81,6 +81,7 @@ atmos_sound_options_dict={
     _("High")                 :"HIGH",
     }
 atmos_sound_options=list(atmos_sound_options_dict.keys())
+inv_dict_atmos_sound_options = bidict(atmos_sound_options_dict).inverse
 
 atmos_sound_volumes_dict={
     _("Low")                  :"LOW",
@@ -88,6 +89,7 @@ atmos_sound_volumes_dict={
     _("High")                 :"HIGH",
     }
 atmos_sound_volumes=list(atmos_sound_volumes_dict.keys())
+inv_dict_atmos_sound_volumes = bidict(atmos_sound_volumes_dict).inverse
 
 dict_bool={
     True  : "ON",
@@ -183,8 +185,8 @@ def main():
                                 [sg.Push(),sg.CBox(_('Censorship'),       tooltip=tt_censor                                                                  ,key='setting_cens')],
                                 
                               ], background_color='#723d01'),
-                              sg.Column([[sg.Frame(_('Atmospheric Sound'),[[sg.Text(_('Frequency'),  tooltip=tt_atmos    ),sg.Combo(atmos_sound_options,tooltip=tt_atmos)],
-                                                      [sg.Text(_('Volume'   ),  tooltip=tt_atmos_vol),sg.Combo(atmos_sound_volumes,tooltip=tt_atmos_vol)]])],
+                              sg.Column([[sg.Frame(_('Atmospheric Sound'),[[sg.Text(_('Frequency'),  tooltip=tt_atmos    ),sg.Combo(atmos_sound_options,tooltip=tt_atmos,key='setting_atmos')],
+                                                      [sg.Text(_('Volume'   ),  tooltip=tt_atmos_vol),sg.Combo(atmos_sound_volumes,tooltip=tt_atmos_vol,key='setting_atmos_vol')]])],
                                                       
                                          [sg.CBox(_('Lock cursor in possession'),tooltip=tt_lock_cursorpos  ,key='setting_lckcurpos')],
                                          [sg.CBox(_('Freeze on lost focus'),     tooltip=tt_freezelostfocus ,key='setting_frzlstfoc')],
@@ -316,21 +318,20 @@ def load_config(win):
         win.find_element('setting_wibl').update(inv_dict_wibble[config["WIBBLE"]])
         win.find_element('setting_movr').update(inv_dict_movie_resize_options[config["RESIZE_MOVIES"]])
         win.find_element('setting_mousen').update(config["POINTER_SENSITIVITY"])
-
-        win.find_element('setting_cens').update(     inv_dict_bool[config["CENSORSHIP"]])
+        win.find_element('setting_cens').update(inv_dict_bool[config["CENSORSHIP"]])
         win.find_element('setting_lckcurpos').update(inv_dict_bool[config["LOCK_CURSOR_IN_POSSESSION"]])
         win.find_element('setting_frzlstfoc').update(inv_dict_bool[config["FREEZE_GAME_ON_FOCUS_LOST"]])
         win.find_element('setting_pausmusic').update(inv_dict_bool[config["PAUSE_MUSIC_WHEN_GAME_PAUSED"]])
         win.find_element('setting_mutelstfc').update(inv_dict_bool[config["MUTE_AUDIO_ON_FOCUS_LOST"]])
         win.find_element('setting_unlcrpaus').update(inv_dict_bool[config["UNLOCK_CURSOR_WHEN_GAME_PAUSED"]])
 
+        if config["ATMOSPHERIC_SOUNDS"] == "OFF":
+            win.find_element('setting_atmos').update(_('Off'))
+        else:
+            win.find_element('setting_atmos').update(inv_dict_atmos_sound_options[config["ATMOS_FREQUENCY"]])
 
-
-    
-
-
-
-
+        win.find_element('setting_atmos_vol').update(inv_dict_atmos_sound_volumes[config["ATMOS_VOLUME"]])
+            
 
 
 
