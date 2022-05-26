@@ -6,59 +6,60 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-05-26 12:06+0200\n"
-"PO-Revision-Date: 2022-05-26 12:19+0200\n"
+"PO-Revision-Date: 2022-05-26 12:50+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: de\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=cp1252\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Generated-By: pygettext.py 1.5\n"
 "X-Generator: Poedit 3.0.1\n"
 
 #: launcher.py:19 launcher.py:170
 msgid "0 (Red)"
-msgstr "0 (Rot)"
+msgstr "0 (Rouge)"
 
 #: launcher.py:20
 msgid "1 (Blue)"
-msgstr "1 (Blau)"
+msgstr "1 (Bleu)"
 
 #: launcher.py:21
 msgid "2 (Green)"
-msgstr "2 (Grün)"
+msgstr "2 (Vert)"
 
 #: launcher.py:22
 msgid "3 (Yellow)"
-msgstr "3 (Gelb)"
+msgstr "3 (Jaune)"
 
 #: launcher.py:57 launcher.py:65
 msgid "On"
-msgstr "An"
+msgstr "ActivÃ©"
 
 #: launcher.py:58 launcher.py:66 launcher.py:78 launcher.py:169 launcher.py:329
 msgid "Off"
-msgstr "Aus"
+msgstr "DÃ©sactivÃ©"
 
 #: launcher.py:59
 msgid "Liquid Only"
-msgstr "Nur Flüssigkeit"
+msgstr "Liquide seulement"
 
 #: launcher.py:67
 msgid "Fit"
-msgstr "Angleichen"
+msgstr "Ajuster"
 
 #: launcher.py:68
 msgid "Stretch"
-msgstr "Strecken"
+msgstr "EtirÃ©e"
 
 #: launcher.py:69
 msgid "Crop"
-msgstr "Zuschneiden"
+msgstr ""
 
 #: launcher.py:70
 msgid "Pixel Perfect"
-msgstr "Pixel Perfekt"
+msgstr ""
 
 #: launcher.py:71
 msgid "4by3"
@@ -70,15 +71,15 @@ msgstr ""
 
 #: launcher.py:79 launcher.py:87
 msgid "Low"
-msgstr "Niedrig"
+msgstr ""
 
 #: launcher.py:80 launcher.py:88
 msgid "Medium"
-msgstr "Mittel"
+msgstr ""
 
 #: launcher.py:81 launcher.py:89
 msgid "High"
-msgstr "Hoch"
+msgstr ""
 
 #: launcher.py:104
 msgid ""
@@ -90,14 +91,6 @@ msgid ""
 " But if the game will crash, the LOG file may help the developers to fix the "
 "problem."
 msgstr ""
-"Sie möchten normalerweise eine Standardversion, da sie schnell und stabil "
-"ist.\n"
-" Die Heavylog-Version protokolliert eine große Anzahl von Nachrichten in "
-"einer Datei \"keeperfx.log\", während Sie spielen.\n"
-" Dies erfordert viel mehr Rechenleistung, so dass es auf langsameren "
-"Maschinen die Spielgeschwindigkeit stark beeinträchtigen kann.\n"
-" Aber wenn das Spiel abstürzt, kann die LOG-Datei den Entwicklern helfen, "
-"das Problem zu beheben."
 
 #: launcher.py:107
 msgid ""
@@ -106,20 +99,14 @@ msgid ""
 "Use this option for skirmish - single player levels won't work properly with "
 "it, unless they were especially designed for human to play as another keeper."
 msgstr ""
-"Ändern Sie die ID des menschlichen Spielers. Dies ermöglicht es Ihnen, als "
-"blauer, grüner oder gelber Keeper zu spielen.\n"
-"Verwenden Sie diese Option für Scharmützel - Einzelspieler-Level "
-"funktionieren nicht richtig damit, es sei denn, sie wurden speziell für "
-"Menschen entwickelt, um als ein anderer Keeper zu spielen."
 
 #: launcher.py:115
 msgid "Do not show intro movie on startup"
-msgstr "Intro-Film beim Start nicht anzeigen"
+msgstr ""
 
 #: launcher.py:116
 msgid "Loads music from the keeperfx/music folder. Place the music there."
 msgstr ""
-"Lädt Musik aus dem Ordner keeperfx/music. Platzieren Sie die Musik dort."
 
 #: launcher.py:120
 msgid ""
@@ -128,10 +115,6 @@ msgid ""
 "Note that some campaigns may not support your language; in this case default "
 "one will be used."
 msgstr ""
-"Hier können Sie Ihre Sprachübersetzung auswählen. Dies wirkt sich auf die "
-"Nachrichten im Spiel, aber auch auf die Reden während des Spiels aus.\n"
-"Beachten Sie, dass einige Kampagnen Ihre Sprache möglicherweise nicht "
-"unterstützen. In diesem Fall wird der Standardwert verwendet."
 
 #: launcher.py:121
 msgid ""
@@ -140,10 +123,6 @@ msgid ""
 "Turn it off to get straight lines. Choose \"liquid only\" to still get waves "
 "in lava and water."
 msgstr ""
-"Wibble dreht und wendet die geraden Blöcke, aus denen die Dungeon-Keeper-"
-"Welt besteht.\n"
-"Schalten Sie es aus, um gerade Linien zu erhalten. Wählen Sie \"nur "
-"Flüssigkeit\", um immer noch Wellen in Lava und Wasser zu bekommen."
 
 #: launcher.py:122
 msgid ""
@@ -151,9 +130,6 @@ msgid ""
 "restrict death effect with exploding flesh.\n"
 "Originally, this was enabled in german language version."
 msgstr ""
-"Die Ermöglichung der Zensur wird nur böse Kreaturen dazu bringen, Blut zu "
-"haben, und wird den Todeseffekt mit explodierendem Fleisch einschränken.\n"
-"Ursprünglich war dies in der deutschen Sprachversion aktiviert."
 
 #: launcher.py:123
 msgid ""
@@ -215,89 +191,89 @@ msgstr ""
 
 #: launcher.py:162
 msgid "Skip Intro"
-msgstr "Intro überspringen"
+msgstr "Sauter lâ€™intro"
 
 #: launcher.py:163
 msgid "Music From Cd"
-msgstr "Musik von Cd"
+msgstr "Musique du CD"
 
 #: launcher.py:164
 #, fuzzy
 #| msgid "unlock mouse"
 msgid "Unlock mouse"
-msgstr "Maus entsperren"
+msgstr "dÃ©verrouiller la souris"
 
 #: launcher.py:165
 msgid "Heavylog"
-msgstr "Heavylog"
+msgstr ""
 
 #: launcher.py:166
 msgid "No sound"
-msgstr "Kein Ton"
+msgstr ""
 
 #: launcher.py:167
 msgid "Cheats"
-msgstr "Schummeln"
+msgstr ""
 
 #: launcher.py:169
 msgid "Computer Chat"
-msgstr "Computer Chat"
+msgstr ""
 
 #: launcher.py:169
 msgid "Frequent"
-msgstr "Häufig"
+msgstr ""
 
 #: launcher.py:169
 msgid "Scarce"
-msgstr "Knapp"
+msgstr ""
 
 #: launcher.py:170
 msgid "Human Id"
-msgstr "Menschliche Id"
+msgstr ""
 
 #: launcher.py:171
 msgid "Game Speed"
-msgstr "Spielgeschwindigkeit"
+msgstr ""
 
 #: launcher.py:172
 msgid "Enabled"
-msgstr "Aktiviert"
+msgstr ""
 
 #: launcher.py:172
 msgid "File Name"
-msgstr "Dateiname"
+msgstr ""
 
 #: launcher.py:172
 msgid "Load"
-msgstr "Laden"
+msgstr ""
 
 #: launcher.py:172
 msgid "Packets"
-msgstr "Pakete"
+msgstr ""
 
 #: launcher.py:172 launcher.py:197
 msgid "Save"
-msgstr "Speichern"
+msgstr ""
 
 #: launcher.py:174
 msgid "Add"
-msgstr "Hinzufügen"
+msgstr ""
 
 #: launcher.py:175
 msgid "Remove"
-msgstr "Entfernen"
+msgstr "Supprimer"
 
 #: launcher.py:179
 msgid "Language"
-msgstr "Sprache"
+msgstr "Langue"
 
 #: launcher.py:180
 msgid "Resolution"
-msgstr "Auflösung"
+msgstr ""
 
 #: launcher.py:181
 msgid "Windowed"
-msgstr "Fenstermodus"
+msgstr ""
 
 #: launcher.py:182
 msgid "Wibble"
@@ -305,11 +281,11 @@ msgstr ""
 
 #: launcher.py:183
 msgid "Resize movies"
-msgstr "Ändern der Größe von Filmen"
+msgstr ""
 
 #: launcher.py:184
 msgid "Mouse sensitivity"
-msgstr "Empfindlichkeit der Maus"
+msgstr ""
 
 #: launcher.py:185
 msgid "Censorship"
@@ -320,10 +296,8 @@ msgid "Atmospheric Sound"
 msgstr ""
 
 #: launcher.py:188
-#, fuzzy
-#| msgid "Frequent"
 msgid "Frequency"
-msgstr "Häufig"
+msgstr ""
 
 #: launcher.py:189
 msgid "Volume"
@@ -351,23 +325,23 @@ msgstr ""
 
 #: launcher.py:208
 msgid "Basic"
-msgstr "Grundlegend"
+msgstr ""
 
 #: launcher.py:216 launcher.py:245 launcher.py:249 launcher.py:254
 msgid "Run Options"
-msgstr "Ausführungsoptionen"
+msgstr ""
 
 #: launcher.py:218 launcher.py:248 launcher.py:250 launcher.py:253
 msgid "Settings"
-msgstr "Einstellungen"
+msgstr ""
 
 #: launcher.py:221
 msgid "Readme"
-msgstr "Liesmich"
+msgstr ""
 
 #: launcher.py:223
 msgid "Open Log"
-msgstr "Öffne Logdatei"
+msgstr ""
 
 #: launcher.py:231
 msgid "Start"
@@ -375,7 +349,7 @@ msgstr ""
 
 #: launcher.py:235
 msgid "KeeperFx Launcher"
-msgstr "KeeperFx-Startprogramm"
+msgstr ""
 
 #: launcher.py:302
 msgid ""
@@ -388,9 +362,3 @@ msgid ""
 "files from orininal missing,\n"
 "press install to copy them"
 msgstr ""
-
-#~ msgid "Multiplayer"
-#~ msgstr "Mehrspieler"
-
-#~ msgid "Advanced"
-#~ msgstr "Erweitert"

@@ -1,0 +1,340 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2022-05-26 12:06+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=cp1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: launcher.py:19 launcher.py:170
+msgid "0 (Red)"
+msgstr ""
+
+#: launcher.py:20
+msgid "1 (Blue)"
+msgstr ""
+
+#: launcher.py:21
+msgid "2 (Green)"
+msgstr ""
+
+#: launcher.py:22
+msgid "3 (Yellow)"
+msgstr ""
+
+#: launcher.py:57 launcher.py:65
+msgid "On"
+msgstr ""
+
+#: launcher.py:58 launcher.py:66 launcher.py:78 launcher.py:169
+#: launcher.py:329
+msgid "Off"
+msgstr ""
+
+#: launcher.py:59
+msgid "Liquid Only"
+msgstr ""
+
+#: launcher.py:67
+msgid "Fit"
+msgstr ""
+
+#: launcher.py:68
+msgid "Stretch"
+msgstr ""
+
+#: launcher.py:69
+msgid "Crop"
+msgstr ""
+
+#: launcher.py:70
+msgid "Pixel Perfect"
+msgstr ""
+
+#: launcher.py:71
+msgid "4by3"
+msgstr ""
+
+#: launcher.py:72
+msgid "4by3 Pixel Perfect"
+msgstr ""
+
+#: launcher.py:79 launcher.py:87
+msgid "Low"
+msgstr ""
+
+#: launcher.py:80 launcher.py:88
+msgid "Medium"
+msgstr ""
+
+#: launcher.py:81 launcher.py:89
+msgid "High"
+msgstr ""
+
+#: launcher.py:104
+msgid ""
+"You usually want standard version, as it is fast and stable.\n"
+" Heavylog version logs huge amount of messages to a file \"keeperfx.log\" while you're playing.\n"
+" This requires a lot more of computation power, so on slower machines it might severely affect gameplay speed.\n"
+" But if the game will crash, the LOG file may help the developers to fix the problem."
+msgstr ""
+
+#: launcher.py:107
+msgid ""
+"Change human player ID. This allows you to play as blue, green or yellow keeper.\n"
+"Use this option for skirmish - single player levels won't work properly with it, unless they were especially designed for human to play as another keeper."
+msgstr ""
+
+#: launcher.py:115
+msgid "Do not show intro movie on startup"
+msgstr ""
+
+#: launcher.py:116
+msgid "Loads music from the keeperfx/music folder. Place the music there."
+msgstr ""
+
+#: launcher.py:120
+msgid ""
+"Here you can select your language translation. This will affect the in-game messages, but also speeches during the game.\n"
+"Note that some campaigns may not support your language; in this case default one will be used."
+msgstr ""
+
+#: launcher.py:121
+msgid ""
+"Wibble twists and turns the straight blocks making up the dungeon keeper world.\n"
+"Turn it off to get straight lines. Choose \"liquid only\" to still get waves in lava and water."
+msgstr ""
+
+#: launcher.py:122
+msgid ""
+"Enabling censorship will make only evil creatures to have blood, and will restrict death effect with exploding flesh.\n"
+"Originally, this was enabled in german language version."
+msgstr ""
+
+#: launcher.py:123
+msgid ""
+"Increasing sensitivity will speed up the mouse in the game. Default value is 100, setting it to 0 will use your windows default instead.\n"
+"High values may make the mouse less accurate, so be careful!"
+msgstr ""
+
+#: launcher.py:124
+msgid "Select whether the game should run in full screen, or as a window. If you've chosen 'windowed', you may want to unlock your mouse cursor at the run options."
+msgstr ""
+
+#: launcher.py:125
+msgid "Write changes to \"keeperfx.cfg\" file."
+msgstr ""
+
+#: launcher.py:126
+msgid "Enabling Atmospheric sounds will have the game play random background sound effects, like drips of water and screams of horror, to set the mood."
+msgstr ""
+
+#: launcher.py:127
+msgid "Change the volume of the Atmospheric sounds effects."
+msgstr ""
+
+#: launcher.py:128
+msgid "Overwrite 'unlock cursor' mode in possession to lock the mouse cursor to the game window when possessing a creature."
+msgstr ""
+
+#: launcher.py:129
+msgid "The game freezes when the window loses focus. Disable to keep playing in background."
+msgstr ""
+
+#: launcher.py:130
+msgid "When the game is paused, pause the music too."
+msgstr ""
+
+#: launcher.py:131
+msgid "When the window loses focus without freezing, still mute the game audio."
+msgstr ""
+
+#: launcher.py:132
+msgid "When pausing, the game will release the mouse cursor to use on other windows."
+msgstr ""
+
+#: launcher.py:133
+msgid "Configures how the movies are displayed."
+msgstr ""
+
+#: launcher.py:162
+msgid "Skip Intro"
+msgstr ""
+
+#: launcher.py:163
+msgid "Music From Cd"
+msgstr ""
+
+#: launcher.py:164
+msgid "Unlock mouse"
+msgstr ""
+
+#: launcher.py:165
+msgid "Heavylog"
+msgstr ""
+
+#: launcher.py:166
+msgid "No sound"
+msgstr ""
+
+#: launcher.py:167
+msgid "Cheats"
+msgstr ""
+
+#: launcher.py:169
+msgid "Computer Chat"
+msgstr ""
+
+#: launcher.py:169
+msgid "Frequent"
+msgstr ""
+
+#: launcher.py:169
+msgid "Scarce"
+msgstr ""
+
+#: launcher.py:170
+msgid "Human Id"
+msgstr ""
+
+#: launcher.py:171
+msgid "Game Speed"
+msgstr ""
+
+#: launcher.py:172
+msgid "Enabled"
+msgstr ""
+
+#: launcher.py:172
+msgid "File Name"
+msgstr ""
+
+#: launcher.py:172
+msgid "Load"
+msgstr ""
+
+#: launcher.py:172
+msgid "Packets"
+msgstr ""
+
+#: launcher.py:172 launcher.py:197
+msgid "Save"
+msgstr ""
+
+#: launcher.py:174
+msgid "Add"
+msgstr ""
+
+#: launcher.py:175
+msgid "Remove"
+msgstr ""
+
+#: launcher.py:179
+msgid "Language"
+msgstr ""
+
+#: launcher.py:180
+msgid "Resolution"
+msgstr ""
+
+#: launcher.py:181
+msgid "Windowed"
+msgstr ""
+
+#: launcher.py:182
+msgid "Wibble"
+msgstr ""
+
+#: launcher.py:183
+msgid "Resize movies"
+msgstr ""
+
+#: launcher.py:184
+msgid "Mouse sensitivity"
+msgstr ""
+
+#: launcher.py:185
+msgid "Censorship"
+msgstr ""
+
+#: launcher.py:188
+msgid "Atmospheric Sound"
+msgstr ""
+
+#: launcher.py:188
+msgid "Frequency"
+msgstr ""
+
+#: launcher.py:189
+msgid "Volume"
+msgstr ""
+
+#: launcher.py:191
+msgid "Freeze game on lost focus"
+msgstr ""
+
+#: launcher.py:192
+msgid "Mute audio on lost focus"
+msgstr ""
+
+#: launcher.py:193
+msgid "Pause music on game pause"
+msgstr ""
+
+#: launcher.py:194
+msgid "Unlock cursor on game pause"
+msgstr ""
+
+#: launcher.py:195
+msgid "Lock cursor in possession"
+msgstr ""
+
+#: launcher.py:208
+msgid "Basic"
+msgstr ""
+
+#: launcher.py:216 launcher.py:245 launcher.py:249 launcher.py:254
+msgid "Run Options"
+msgstr ""
+
+#: launcher.py:218 launcher.py:248 launcher.py:250 launcher.py:253
+msgid "Settings"
+msgstr ""
+
+#: launcher.py:221
+msgid "Readme"
+msgstr ""
+
+#: launcher.py:223
+msgid "Open Log"
+msgstr ""
+
+#: launcher.py:231
+msgid "Start"
+msgstr ""
+
+#: launcher.py:235
+msgid "KeeperFx Launcher"
+msgstr ""
+
+#: launcher.py:302
+msgid ""
+"please place file in same folder\n"
+"as your keeperfx installation"
+msgstr ""
+
+#: launcher.py:304
+msgid ""
+"files from orininal missing,\n"
+"press install to copy them"
+msgstr ""
+
