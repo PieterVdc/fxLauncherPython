@@ -1,0 +1,427 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2022-05-26 12:06+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#: launcher.py:19 launcher.py:170
+msgid "0 (Red)"
+msgstr "０（赤色）"
+
+#: launcher.py:20
+msgid "1 (Blue)"
+msgstr "１（青色）"
+
+#: launcher.py:21
+msgid "2 (Green)"
+msgstr "３（緑色）"
+
+#: launcher.py:22
+msgid "3 (Yellow)"
+msgstr "４（黄色）"
+
+#: launcher.py:57 launcher.py:65
+#, fuzzy
+#| msgctxt "centreform.rson"
+#| msgid "On"
+msgid "On"
+msgstr "オン"
+
+#: launcher.py:58 launcher.py:66 launcher.py:78 launcher.py:169 launcher.py:329
+#, fuzzy
+#| msgctxt "centreform.rsoff"
+#| msgid "Off"
+msgid "Off"
+msgstr "オフ"
+
+#: launcher.py:59
+msgid "Liquid Only"
+msgstr "液体しか"
+
+#: launcher.py:67
+#, fuzzy
+#| msgctxt "tinstancesform.instancescomboboxex.itemsex[1].caption"
+#| msgid "Fist"
+msgid "Fit"
+msgstr "拳骨"
+
+#: launcher.py:68
+#, fuzzy
+#| msgid "Tile Strength"
+msgid "Stretch"
+msgstr "タイル力"
+
+#: launcher.py:69
+msgid "Crop"
+msgstr ""
+
+#: launcher.py:70
+msgid "Pixel Perfect"
+msgstr ""
+
+#: launcher.py:71
+msgid "4by3"
+msgstr ""
+
+#: launcher.py:72
+msgid "4by3 Pixel Perfect"
+msgstr ""
+
+#: launcher.py:79 launcher.py:87
+#, fuzzy
+#| msgctxt "tcentreform.atmosfreq.itemsex[0].caption"
+#| msgid "Low"
+msgid "Low"
+msgstr "少回数"
+
+#: launcher.py:80 launcher.py:88
+#, fuzzy
+#| msgctxt "tcentreform.atmosfreq.itemsex[1].caption"
+#| msgid "Medium"
+msgid "Medium"
+msgstr "中回数"
+
+#: launcher.py:81 launcher.py:89
+#, fuzzy
+#| msgctxt "tcentreform.atmosfreq.itemsex[2].caption"
+#| msgid "High"
+msgid "High"
+msgstr "高回数"
+
+#: launcher.py:104
+msgid ""
+"You usually want standard version, as it is fast and stable.\n"
+" Heavylog version logs huge amount of messages to a file \"keeperfx.log\" "
+"while you're playing.\n"
+" This requires a lot more of computation power, so on slower machines it "
+"might severely affect gameplay speed.\n"
+" But if the game will crash, the LOG file may help the developers to fix the "
+"problem."
+msgstr ""
+
+#: launcher.py:107
+msgid ""
+"Change human player ID. This allows you to play as blue, green or yellow "
+"keeper.\n"
+"Use this option for skirmish - single player levels won't work properly with "
+"it, unless they were especially designed for human to play as another keeper."
+msgstr ""
+
+#: launcher.py:115
+msgid "Do not show intro movie on startup"
+msgstr ""
+
+#: launcher.py:116
+msgid "Loads music from the keeperfx/music folder. Place the music there."
+msgstr ""
+
+#: launcher.py:120
+msgid ""
+"Here you can select your language translation. This will affect the in-game "
+"messages, but also speeches during the game.\n"
+"Note that some campaigns may not support your language; in this case default "
+"one will be used."
+msgstr ""
+
+#: launcher.py:121
+msgid ""
+"Wibble twists and turns the straight blocks making up the dungeon keeper "
+"world.\n"
+"Turn it off to get straight lines. Choose \"liquid only\" to still get waves "
+"in lava and water."
+msgstr ""
+
+#: launcher.py:122
+msgid ""
+"Enabling censorship will make only evil creatures to have blood, and will "
+"restrict death effect with exploding flesh.\n"
+"Originally, this was enabled in german language version."
+msgstr ""
+
+#: launcher.py:123
+msgid ""
+"Increasing sensitivity will speed up the mouse in the game. Default value is "
+"100, setting it to 0 will use your windows default instead.\n"
+"High values may make the mouse less accurate, so be careful!"
+msgstr ""
+
+#: launcher.py:124
+msgid ""
+"Select whether the game should run in full screen, or as a window. If you've "
+"chosen 'windowed', you may want to unlock your mouse cursor at the run "
+"options."
+msgstr ""
+
+#: launcher.py:125
+msgid "Write changes to \"keeperfx.cfg\" file."
+msgstr ""
+
+#: launcher.py:126
+msgid ""
+"Enabling Atmospheric sounds will have the game play random background sound "
+"effects, like drips of water and screams of horror, to set the mood."
+msgstr ""
+
+#: launcher.py:127
+msgid "Change the volume of the Atmospheric sounds effects."
+msgstr ""
+
+#: launcher.py:128
+msgid ""
+"Overwrite 'unlock cursor' mode in possession to lock the mouse cursor to the "
+"game window when possessing a creature."
+msgstr ""
+
+#: launcher.py:129
+msgid ""
+"The game freezes when the window loses focus. Disable to keep playing in "
+"background."
+msgstr ""
+
+#: launcher.py:130
+msgid "When the game is paused, pause the music too."
+msgstr ""
+
+#: launcher.py:131
+msgid ""
+"When the window loses focus without freezing, still mute the game audio."
+msgstr ""
+
+#: launcher.py:132
+msgid ""
+"When pausing, the game will release the mouse cursor to use on other windows."
+msgstr ""
+
+#: launcher.py:133
+msgid "Configures how the movies are displayed."
+msgstr ""
+
+#: launcher.py:162
+msgid "Skip Intro"
+msgstr "イントロを無効にする"
+
+#: launcher.py:163
+msgid "Music From Cd"
+msgstr ""
+
+#: launcher.py:164
+msgid "Unlock mouse"
+msgstr "一時停止した時にアンロックする"
+
+#: launcher.py:165
+msgid "Heavylog"
+msgstr "大量な作譜版"
+
+#: launcher.py:166
+msgid "No sound"
+msgstr "音を無効にする"
+
+#: launcher.py:167
+msgid "Cheats"
+msgstr ""
+
+#: launcher.py:169
+msgid "Computer Chat"
+msgstr "電脳の歓談"
+
+#: launcher.py:169
+msgid "Frequent"
+msgstr "頻出"
+
+#: launcher.py:169
+msgid "Scarce"
+msgstr "希少"
+
+#: launcher.py:170
+msgid "Human Id"
+msgstr "人間のプレイヤー番号"
+
+#: launcher.py:171
+#, fuzzy
+#| msgctxt "rulesunit.rsspellspeed"
+#| msgid "Speed"
+msgid "Game Speed"
+msgstr "加速"
+
+#: launcher.py:172
+#, fuzzy
+#| msgctxt "tcentreform.atmos.caption"
+#| msgid "Enable"
+msgid "Enabled"
+msgstr "オン"
+
+#: launcher.py:172
+#, fuzzy
+#| msgctxt "highscoresunit.rsname"
+#| msgid "Name"
+msgid "File Name"
+msgstr "名前"
+
+#: launcher.py:172
+msgid "Load"
+msgstr "ロード"
+
+#: launcher.py:172
+#, fuzzy
+#| msgid "Packet File"
+msgid "Packets"
+msgstr "パケットのファイル"
+
+#: launcher.py:172 launcher.py:197
+#, fuzzy
+#| msgctxt "tcentreform.packetsave.caption"
+#| msgid "Save"
+msgid "Save"
+msgstr "セーブ"
+
+#: launcher.py:174
+#, fuzzy
+#| msgctxt "tcentreform.addresbtn.caption"
+#| msgid "Add"
+msgid "Add"
+msgstr "付け加え"
+
+#: launcher.py:175
+#, fuzzy
+#| msgctxt "tcentreform.removeresbtn.caption"
+#| msgid "Remove"
+msgid "Remove"
+msgstr "消す"
+
+#: launcher.py:179
+#, fuzzy
+#| msgid "&Language"
+msgid "Language"
+msgstr "言語"
+
+#: launcher.py:180
+#, fuzzy
+#| msgctxt "tcentreform.label3.caption"
+#| msgid "Resolution"
+msgid "Resolution"
+msgstr "解像度"
+
+#: launcher.py:181
+#, fuzzy
+#| msgctxt "tcentreform.fmcombobox.itemsex[1].caption"
+#| msgid "Windowed"
+msgid "Windowed"
+msgstr "ウィンドウ"
+
+#: launcher.py:182
+msgid "Wibble"
+msgstr "ぐらぐら"
+
+#: launcher.py:183
+#, fuzzy
+#| msgid "Resize Films"
+msgid "Resize movies"
+msgstr "動画の寸法を変更する"
+
+#: launcher.py:184
+#, fuzzy
+#| msgid "Sensitivity"
+msgid "Mouse sensitivity"
+msgstr "感度"
+
+#: launcher.py:185
+msgid "Censorship"
+msgstr "検閲"
+
+#: launcher.py:188
+#, fuzzy
+#| msgctxt "tcentreform.atmosgroupbox.caption"
+#| msgid "Atmospheric Sounds"
+msgid "Atmospheric Sound"
+msgstr "背景音"
+
+#: launcher.py:188
+msgid "Frequency"
+msgstr "回数"
+
+#: launcher.py:189
+msgid "Volume"
+msgstr "音量"
+
+#: launcher.py:191
+#, fuzzy
+#| msgid "Freeze game"
+msgid "Freeze game on lost focus"
+msgstr "ゲームをフリーズする"
+
+#: launcher.py:192
+msgid "Mute audio on lost focus"
+msgstr ""
+
+#: launcher.py:193
+#, fuzzy
+#| msgid "Pause with game"
+msgid "Pause music on game pause"
+msgstr "ゲームと一緒に一時停止する"
+
+#: launcher.py:194
+#, fuzzy
+#| msgid "Unlock when paused"
+msgid "Unlock cursor on game pause"
+msgstr "一時停止した時にアンロックする"
+
+#: launcher.py:195
+#, fuzzy
+#| msgid "Lock in possession"
+msgid "Lock cursor in possession"
+msgstr "支配時にロックする"
+
+#: launcher.py:208
+msgid "Basic"
+msgstr ""
+
+#: launcher.py:216 launcher.py:245 launcher.py:249 launcher.py:254
+#, fuzzy
+#| msgctxt "tcentreform.runoptionsgroupbox.caption"
+#| msgid "Run options"
+msgid "Run Options"
+msgstr "実行のオプション"
+
+#: launcher.py:218 launcher.py:248 launcher.py:250 launcher.py:253
+#, fuzzy
+#| msgctxt "tpowersform.powersettingsgroupbox.caption"
+#| msgid "Settings"
+msgid "Settings"
+msgstr "設定"
+
+#: launcher.py:221
+msgid "Readme"
+msgstr "リードミー"
+
+#: launcher.py:223
+#, fuzzy
+#| msgid "Open LIF"
+msgid "Open Log"
+msgstr "LIFを開く"
+
+#: launcher.py:231
+msgid "Start"
+msgstr "開始"
+
+#: launcher.py:235
+msgid "KeeperFx Launcher"
+msgstr ""
+
+#: launcher.py:302
+msgid ""
+"please place file in same folder\n"
+"as your keeperfx installation"
+msgstr ""
+
+#: launcher.py:304
+msgid ""
+"files from orininal missing,\n"
+"press install to copy them"
+msgstr ""
