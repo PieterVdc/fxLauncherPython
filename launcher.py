@@ -13,6 +13,25 @@ if not callable(getattr(builtins, '_', None)):
     builtins.__dict__['_'] = identity
 
 ip_address_list = ['example.com:5555', '192.168.1.7:5555']
+lang = 'ENG'
+
+parser = ConfigParser()
+with open("./keeperfx.cfg") as stream:
+    parser.read_string("[top]\n" + stream.read())  # trick config parser to treat cfg as an ini
+    config = parser['top']
+    lang = config["LANGUAGE"]
+
+
+LOCALE_DIR = os.path.join(os.path.abspath(
+    os.path.dirname(__file__)), 'lang')
+language = gettext.translation(
+    'fxLauncher',
+    languages=[lang],
+    localedir=LOCALE_DIR,
+    fallback=True)
+language.install()
+
+
 
 
 human_ids_dict={
@@ -98,6 +117,14 @@ dict_bool={
 inv_dict_bool = bidict(dict_bool).inverse
 
 
+dict_compuchat_opts= {
+    _("Off")        :"",
+    _('Scarce')     :"scarce",
+    _('Frequent')   :"frequent"
+    }
+compuchat_opts=list(dict_compuchat_opts.keys())
+
+
 #tooltips run options
 
 #               _("Command line to run. Here you can type by hand the parameters you wish to use.")
@@ -135,22 +162,6 @@ tt_resizemov        = _("Configures how the movies are displayed.")
 
 def main():
 
-#    LOCALE_DIR = os.path.join(os.path.abspath(
-#        os.path.dirname(__file__)), 'lang')
-#
-
-#
-#    language = gettext.translation(
-#        'fxLauncher',
-#        languages=['GER'],
-#        localedir=LOCALE_DIR,
-#        fallback=True)
-#    language.install()
-#
-
-
-
-
     sg.theme('Dark Brown 5')
     sg.SetOptions(text_element_background_color='#723d01',
                   element_background_color='#723d01'
@@ -166,7 +177,7 @@ def main():
                                  [sg.CBox(_('No sound'),     key='ro_NoSnd',                         enable_events=True)],
                                  [sg.CBox(_('Cheats'),       key='ro_Alex',                          enable_events=True)]
                                 ], background_color='#723d01'),
-                      sg.Column([[sg.Push(),sg.Text(_('Computer Chat')),sg.Combo((_('Off'), _('Scarce'), _('Frequent')),default_value=_('Off'), size=10,key='ro_CompChat',enable_events=True)],
+                      sg.Column([[sg.Push(),sg.Text(_('Computer Chat')),sg.Combo((compuchat_opts),default_value=_('Off'), size=10,key='ro_CompChat',enable_events=True)],
                                  [sg.Push(),sg.Text(_('Human Id')),     sg.Combo(human_ids,default_value=_('0 (Red)'), size=10,key='ro_HumanId',tooltip=tt_human_id,enable_events=True)],
                                  [sg.Push(),sg.Text(_('Game Speed')),sg.InputText('20', size=12,key='ro_GameSpeed',enable_events=True)],
                                  [sg.Frame(_('Packets'),[[sg.CBox(_('Enabled'))],[sg.Text(_('File Name')),sg.InputText('replay.pck', size=15,enable_events=True),],[sg.Radio(_('Load'), "PckLoadSave", default=True, size=10),sg.Radio(_('Save'), "PckLoadSave")]])]
