@@ -319,7 +319,7 @@ msgstr ""
 
 #: launcher.py:183
 msgid "Resize movies"
-msgstr "Videos vergroten/verkleinen"
+msgstr "Videos schalen"
 
 #: launcher.py:184
 msgid "Mouse sensitivity"
