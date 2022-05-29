@@ -4,6 +4,7 @@ import os
 from os.path import exists
 import configparser
 
+from win32api import *
 from bidict import bidict
 import PySimpleGUI as sg
 from configparser import ConfigParser
@@ -320,8 +321,11 @@ def check_files(win):
         win.find_element('errortext').update(_('files from orininal missing,\npress install to copy them'))
         win.find_element('StartBtn').update('install')
     else:
-        win.find_element('errortext').update('')
         win.find_element('StartBtn').update('run')
+        file_path = './keeperfx.exe'
+  
+        version = ".".join(get_version_number(file_path))   
+        win.find_element('errortext').update(version)
         return True
     
 def load_config(win):
@@ -361,6 +365,17 @@ def load_launch_options(win):
         if "-packetsave" in run_string:
             win.find_element('ro_Alex')
 
+
+def get_version_number(file_path):
+  
+    File_information = GetFileVersionInfo(file_path, "\\")
+  
+    ms_file_version = File_information['FileVersionMS']
+    ls_file_version = File_information['FileVersionLS']
+  
+    return [str(HIWORD(ms_file_version)), str(LOWORD(ms_file_version)),
+            str(HIWORD(ls_file_version)), str(LOWORD(ls_file_version))]
+  
 
 
 if __name__ == '__main__':
