@@ -94,18 +94,18 @@ movie_resize_options=list(dict_movie_resize_options.keys())
 inv_dict_movie_resize_options = bidict(dict_movie_resize_options).inverse
 
 atmos_sound_options_dict={
-    _("Off")                  :"OFF",
-    _("Low")                  :"LOW",
-    _("Medium")               :"MEDIUM",
-    _("High")                 :"HIGH",
+    _("Off")      :"OFF",
+    _("Low")      :"LOW",
+    _("Medium")   :"MEDIUM",
+    _("High")     :"HIGH",
     }
 atmos_sound_options=list(atmos_sound_options_dict.keys())
 inv_dict_atmos_sound_options = bidict(atmos_sound_options_dict).inverse
 
 atmos_sound_volumes_dict={
-    _("Low")                  :"LOW",
-    _("Medium")               :"MEDIUM",
-    _("High")                 :"HIGH",
+    _("Low")     :"LOW",
+    _("Medium")  :"MEDIUM",
+    _("High")    :"HIGH",
     }
 atmos_sound_volumes=list(atmos_sound_volumes_dict.keys())
 inv_dict_atmos_sound_volumes = bidict(atmos_sound_volumes_dict).inverse
@@ -123,6 +123,9 @@ dict_compuchat_opts= {
     _('Frequent')   :"frequent"
     }
 compuchat_opts=list(dict_compuchat_opts.keys())
+
+packet_opts= [_("Off"),_('Save'),_('Load')]
+
 
 
 #tooltips run options
@@ -180,7 +183,8 @@ def main():
                       sg.Column([[sg.Push(),sg.Text(_('Computer Chat')),sg.Combo((compuchat_opts),default_value=_('Off'), size=10,key='ro_CompChat',enable_events=True)],
                                  [sg.Push(),sg.Text(_('Human Id')),     sg.Combo(human_ids,default_value=_('0 (Red)'), size=10,key='ro_HumanId',tooltip=tt_human_id,enable_events=True)],
                                  [sg.Push(),sg.Text(_('Game Speed')),sg.InputText('20', size=12,key='ro_GameSpeed',enable_events=True)],
-                                 [sg.Frame(_('Packets'),[[sg.CBox(_('Enabled'))],[sg.Text(_('File Name')),sg.InputText('replay.pck', size=15,enable_events=True),],[sg.Radio(_('Load'), "PckLoadSave", default=True, size=10),sg.Radio(_('Save'), "PckLoadSave")]])]
+                                 [sg.Frame(_('Packets'),[[sg.Combo((packet_opts),default_value=_('Off'), size=10,key='ro_CompChat',enable_events=True)],
+                                                         [sg.Text(_('File')),sg.InputText('replay.pck', size=15,enable_events=True)]])]
                                 ], background_color='#723d01'),
                       sg.Column([[sg.InputText('127.0.0.1', size=10,key='ro_mp_ip'),sg.InputText('5555', size=4,key='ro_mp_port'),sg.Button(_('Add'),key='ro_mp_Add')],
                                  [sg.Listbox(values=ip_address_list, size=(20, 5),key='ro_mp_List')],[sg.Push(),sg.Button(_('Remove'),key='ro_mp_Remove')]], background_color='#723d01')]
@@ -246,8 +250,9 @@ def main():
     win = sg.Window(_('KeeperFx Launcher'), layout, finalize=True, keep_on_top=False, grab_anywhere=True, no_titlebar=False,margins=(0, 0),background_color='black', right_click_menu=[[''], ['Exit',]])
 
 
-    check_files(win)
-    load_config(win)
+    if check_files(win):
+        load_config(win)
+        load_launch_options(win)
 
     while True:
         window, event, values = sg.read_all_windows()
@@ -314,9 +319,10 @@ def check_files(win):
     elif not exists("./data/bluepal.dat"):
         win.find_element('errortext').update(_('files from orininal missing,\npress install to copy them'))
         win.find_element('StartBtn').update('install')
- #   else:
- #       win.find_element('errortext').update('')
- #       win.find_element('StartBtn').update('run')
+    else:
+        win.find_element('errortext').update('')
+        win.find_element('StartBtn').update('run')
+        return True
     
 def load_config(win):
     parser = ConfigParser()
@@ -343,7 +349,17 @@ def load_config(win):
 
         win.find_element('setting_atmos_vol').update(inv_dict_atmos_sound_volumes[config["ATMOS_VOLUME"]])
             
-
+def load_launch_options(win):
+    with open("./launch.sh") as stream:
+        run_string =stream.read()
+        win.find_element('ro_HvLog'    ).update(run_string.find("keeperfx_hvlog.exe") > 0)
+        win.find_element('ro_SkipIntro').update(run_string.find("-nointro")           > 0)
+        win.find_element('ro_NoCd'     ).update(run_string.find("-nocd")              > 0)
+        win.find_element('ro_altinp'   ).update(run_string.find("-altinput")          > 0)
+        win.find_element('ro_NoSnd'    ).update(run_string.find("-nosound")           > 0)
+        win.find_element('ro_Alex'     ).update(run_string.find("-alex")              > 0)
+        if "-packetsave" in run_string:
+            win.find_element('ro_Alex')
 
 
 

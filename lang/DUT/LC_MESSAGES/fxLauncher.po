@@ -6,56 +6,56 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-05-26 12:06+0200\n"
-"PO-Revision-Date: 2022-05-29 12:56+0200\n"
+"PO-Revision-Date: 2022-05-29 16:05+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: fr\n"
+"Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Generated-By: pygettext.py 1.5\n"
 "X-Generator: Poedit 3.0.1\n"
 
 #: launcher.py:19 launcher.py:170
 msgid "0 (Red)"
-msgstr "0 (Rouge)"
+msgstr "0 (Rood)"
 
 #: launcher.py:20
 msgid "1 (Blue)"
-msgstr "1 (Bleu)"
+msgstr "1 (Blauw)"
 
 #: launcher.py:21
 msgid "2 (Green)"
-msgstr "2 (Vert)"
+msgstr "2 (Groen)"
 
 #: launcher.py:22
 msgid "3 (Yellow)"
-msgstr "3 (Jaune)"
+msgstr "3 (Geel)"
 
 #: launcher.py:57 launcher.py:65
 msgid "On"
-msgstr "Activé"
+msgstr "Aan"
 
 #: launcher.py:58 launcher.py:66 launcher.py:78 launcher.py:169 launcher.py:329
 msgid "Off"
-msgstr "Désactivé"
+msgstr "Uit"
 
 #: launcher.py:59
 msgid "Liquid Only"
-msgstr "Liquide seulement"
+msgstr "Enkel water/lava"
 
 #: launcher.py:67
 msgid "Fit"
-msgstr "Ajuster"
+msgstr "Passend"
 
 #: launcher.py:68
 msgid "Stretch"
-msgstr "Etirée"
+msgstr "Uitrekken"
 
 #: launcher.py:69
 msgid "Crop"
-msgstr ""
+msgstr "Bijsnijden"
 
 #: launcher.py:70
 msgid "Pixel Perfect"
@@ -71,7 +71,7 @@ msgstr ""
 
 #: launcher.py:79 launcher.py:87
 msgid "Low"
-msgstr ""
+msgstr "Laag"
 
 #: launcher.py:80 launcher.py:88
 msgid "Medium"
@@ -79,7 +79,7 @@ msgstr ""
 
 #: launcher.py:81 launcher.py:89
 msgid "High"
-msgstr ""
+msgstr "Hoog"
 
 #: launcher.py:104
 msgid ""
@@ -91,14 +91,13 @@ msgid ""
 " But if the game will crash, the LOG file may help the developers to fix the "
 "problem."
 msgstr ""
-"Vous voulez généralement une version standard, car elle est rapide et "
-"stable.\n"
-" La version Heavylog enregistre une énorme quantité de messages dans un "
-"fichier « keeperfx.log » pendant que vous jouez.\n"
-" Cela nécessite beaucoup plus de puissance de calcul, donc sur des machines "
-"plus lentes, cela peut affecter gravement la vitesse de jeu.\n"
-" Mais si le jeu se bloque, le fichier LOG peut aider les développeurs à "
-"résoudre le problème."
+"Je wilt meestal de standaard versie, omdat die snel en stabiel is.\n"
+" Heavylog logt een grote hoeveelheid berichten naar een bestand \"keeperfx."
+"log\" terwijl je aan het spelen bent.\n"
+" Dit vereist veel meer rekenkracht, dus op langzamere machines kan het de "
+"spelsnelheid ernstig beïnvloeden.\n"
+" Maar als het spel crasht, kan het LOG bestand de ontwikkelaars helpen om "
+"het probleem op te lossen."
 
 #: launcher.py:107
 msgid ""
@@ -107,21 +106,19 @@ msgid ""
 "Use this option for skirmish - single player levels won't work properly with "
 "it, unless they were especially designed for human to play as another keeper."
 msgstr ""
-"Modifiez l’ID du joueur humain. Cela vous permet de jouer en tant que "
-"gardien bleu, vert ou jaune.\n"
-"Utilisez cette option pour l’escarmouche - les niveaux solo ne "
-"fonctionneront pas correctement avec elle, à moins qu’ils n’aient été "
-"spécialement conçus pour que les humains puissent jouer en tant que gardien."
+"Verander menselijke speler ID. Hiermee kun je als blauwe, groene of gele "
+"keeper spelen.\n"
+"Gebruik deze optie voor skirmish - single player levels zullen er niet goed "
+"mee werken, tenzij ze speciaal ontworpen zijn om een mens als een andere "
+"keeper te laten spelen."
 
 #: launcher.py:115
 msgid "Do not show intro movie on startup"
-msgstr "Ne pas afficher le film d’introduction au démarrage"
+msgstr "Intro filmpje niet tonen bij opstarten"
 
 #: launcher.py:116
 msgid "Loads music from the keeperfx/music folder. Place the music there."
-msgstr ""
-"Charge la musique à partir du dossier keeperfx/music. Placez la musique là-"
-"bas."
+msgstr "Laadt muziek uit de map keeperfx / muziek. Plaats de muziek daar."
 
 #: launcher.py:120
 msgid ""
@@ -130,10 +127,10 @@ msgid ""
 "Note that some campaigns may not support your language; in this case default "
 "one will be used."
 msgstr ""
-"Ici, vous pouvez sélectionner votre traduction linguistique. Cela affectera "
-"les messages dans le jeu, mais aussi les discours pendant le jeu.\n"
-"Notez que certaines campagnes peuvent ne pas prendre en charge votre "
-"langue ; dans ce cas, un par défaut sera utilisé."
+"Hier kun je de vertaling selecteren. Dit zal invloed hebben op de berichten "
+"in het spel, maar ook op toespraken tijdens het spel.\n"
+"Houd er rekening mee dat sommige campagnes uw taal mogelijk niet "
+"ondersteunen; in dat geval zal de standaardtaal worden gebruikt."
 
 #: launcher.py:121
 msgid ""
@@ -142,10 +139,10 @@ msgid ""
 "Turn it off to get straight lines. Choose \"liquid only\" to still get waves "
 "in lava and water."
 msgstr ""
-"Wibble tord et tourne les blocs droits qui composent le monde des gardiens "
-"de donjon.\n"
-"Éteignez-le pour obtenir des lignes droites. Choisissez « liquide "
-"seulement » pour obtenir encore des vagues dans la lave et l’eau."
+"Wibble draait en keert de rechte blokken die de dungeon keeper wereld "
+"vormen.\n"
+"Zet het uit om rechte lijnen te krijgen. Kies \"Enkel water/lava\" om nog "
+"steeds golven in lava en water te krijgen."
 
 #: launcher.py:122
 msgid ""
@@ -153,9 +150,9 @@ msgid ""
 "restrict death effect with exploding flesh.\n"
 "Originally, this was enabled in german language version."
 msgstr ""
-"Permettre la censure ne fera que des créatures maléfiques d’avoir du sang, "
-"et limitera l’effet de la mort avec une chair qui explose.\n"
-"À l’origine, cela était activé dans la version allemande."
+"Door censuur in te schakelen zullen alleen slechte wezens bloed hebben, en "
+"zal het doodseffect met exploderend vlees beperkt worden.\n"
+"Oorspronkelijk was dit ingeschakeld in de duitstalige versie."
 
 #: launcher.py:123
 msgid ""
@@ -163,11 +160,10 @@ msgid ""
 "100, setting it to 0 will use your windows default instead.\n"
 "High values may make the mouse less accurate, so be careful!"
 msgstr ""
-"L’augmentation de la sensibilité accélérera la souris dans le jeu. La valeur "
-"par défaut est 100, la définir sur 0 utilisera plutôt la valeur par défaut "
-"de votre fenêtre.\n"
-"Des valeurs élevées peuvent rendre la souris moins précise, alors soyez "
-"prudent!"
+"Het verhogen van de gevoeligheid zal de muis sneller maken in het spel. De "
+"standaardwaarde is 100, als je deze op 0 zet, wordt de standaardwaarde van "
+"Windows gebruikt.\n"
+"Hoge waarden kunnen de muis minder nauwkeurig maken, dus wees voorzichtig!"
 
 #: launcher.py:124
 msgid ""
@@ -175,75 +171,83 @@ msgid ""
 "chosen 'windowed', you may want to unlock your mouse cursor at the run "
 "options."
 msgstr ""
-"Sélectionnez si le jeu doit s’exécuter en plein écran ou sous forme de "
-"fenêtre. Si vous avez choisi « fenêtré », vous pouvez déverrouiller le "
-"curseur de votre souris dans les options d’exécution."
+"Kies of het spel op volledig scherm moet draaien, of als venster. Als je 'in "
+"venster' hebt gekozen, kun je je muiscursor bij de run options ontgrendelen."
 
 #: launcher.py:125
 msgid "Write changes to \"keeperfx.cfg\" file."
-msgstr ""
+msgstr "Schrijf wijzigingen in het bestand \"keeperfx.cfg\"."
 
 #: launcher.py:126
 msgid ""
 "Enabling Atmospheric sounds will have the game play random background sound "
 "effects, like drips of water and screams of horror, to set the mood."
 msgstr ""
+"Door atmosferische geluiden in te schakelen, speelt de game willekeurige "
+"achtergrondgeluidseffecten, zoals druppels water en geschreeuw van horror, "
+"om de sfeer te bepalen."
 
 #: launcher.py:127
 msgid "Change the volume of the Atmospheric sounds effects."
-msgstr ""
+msgstr "Wijzig het volume van de effecten Atmosferische geluiden."
 
 #: launcher.py:128
 msgid ""
 "Overwrite 'unlock cursor' mode in possession to lock the mouse cursor to the "
 "game window when possessing a creature."
 msgstr ""
+"Overschrijf de 'unlock cursor'-modus in Wezenbeheersing om de muiscursor te "
+"vergrendelen in het spelvenster wanneer je een wezen bezit."
 
 #: launcher.py:129
 msgid ""
 "The game freezes when the window loses focus. Disable to keep playing in "
 "background."
 msgstr ""
+"Het spel bevriest wanneer het venster de focus verliest. Schakel uit om op "
+"de achtergrond te blijven spelen."
 
 #: launcher.py:130
 msgid "When the game is paused, pause the music too."
-msgstr ""
+msgstr "Wanneer het spel is gepauzeerd, pauzeer je ook de muziek."
 
 #: launcher.py:131
 msgid ""
 "When the window loses focus without freezing, still mute the game audio."
 msgstr ""
+"Als het venster de focus verliest zonder te bevriezen, demp dan nog steeds "
+"de spelaudio."
 
 #: launcher.py:132
 msgid ""
 "When pausing, the game will release the mouse cursor to use on other windows."
 msgstr ""
+"Bij het pauzeren zal het spel de muiscursor vrijgeven om op andere vensters "
+"te gebruiken."
 
 #: launcher.py:133
 msgid "Configures how the movies are displayed."
-msgstr ""
+msgstr "Configureert hoe de videos worden weergegeven."
 
 #: launcher.py:162
 msgid "Skip Intro"
-msgstr "Sauter l’intro"
+msgstr "Intro overslaan"
 
 #: launcher.py:163
 msgid "Music From Cd"
-msgstr "Musique du CD"
+msgstr "Muziek van cd"
 
 #: launcher.py:164
-#, fuzzy
-#| msgid "unlock mouse"
 msgid "Unlock mouse"
-msgstr "déverrouiller la souris"
+msgstr "Muis ontgrendelen"
 
 #: launcher.py:165
 msgid "Heavylog"
-msgstr ""
+msgstr "Heavylog"
 
 #: launcher.py:166
 msgid "No sound"
-msgstr ""
+msgstr "Geen geluid"
 
 #: launcher.py:167
 msgid "Cheats"
@@ -255,59 +259,59 @@ msgstr ""
 
 #: launcher.py:169
 msgid "Frequent"
-msgstr ""
+msgstr "Frequent"
 
 #: launcher.py:169
 msgid "Scarce"
-msgstr ""
+msgstr "Zelden"
 
 #: launcher.py:170
 msgid "Human Id"
-msgstr ""
+msgstr "Menselijke Id"
 
 #: launcher.py:171
 msgid "Game Speed"
-msgstr ""
+msgstr "Spelsnelheid"
 
 #: launcher.py:172
 msgid "Enabled"
-msgstr ""
+msgstr "Ingeschakeld"
 
 #: launcher.py:172
 msgid "File Name"
-msgstr ""
+msgstr "Bestandsnaam"
 
 #: launcher.py:172
 msgid "Load"
-msgstr ""
+msgstr "Laden"
 
 #: launcher.py:172
 msgid "Packets"
-msgstr ""
+msgstr "Pakketten"
 
 #: launcher.py:172 launcher.py:197
 msgid "Save"
-msgstr ""
+msgstr "Opslaan"
 
 #: launcher.py:174
 msgid "Add"
-msgstr ""
+msgstr "Toevoegen"
 
 #: launcher.py:175
 msgid "Remove"
-msgstr "Supprimer"
+msgstr "Verwijderen"
 
 #: launcher.py:179
 msgid "Language"
-msgstr "Langue"
+msgstr "Taak"
 
 #: launcher.py:180
 msgid "Resolution"
-msgstr ""
+msgstr "Resolutie"
 
 #: launcher.py:181
 msgid "Windowed"
-msgstr ""
+msgstr "In venster"
 
 #: launcher.py:182
 msgid "Wibble"
@@ -315,23 +319,23 @@ msgstr ""
 
 #: launcher.py:183
 msgid "Resize movies"
-msgstr ""
+msgstr "Videos vergroten/verkleinen"
 
 #: launcher.py:184
 msgid "Mouse sensitivity"
-msgstr ""
+msgstr "Muis gevoeligheid"
 
 #: launcher.py:185
 msgid "Censorship"
-msgstr ""
+msgstr "Censuur"
 
 #: launcher.py:188
 msgid "Atmospheric Sound"
-msgstr ""
+msgstr "Atmosferische Geluiden"
 
 #: launcher.py:188
 msgid "Frequency"
-msgstr ""
+msgstr "Frequentie"
 
 #: launcher.py:189
 msgid "Volume"
@@ -339,43 +343,43 @@ msgstr ""
 
 #: launcher.py:191
 msgid "Freeze game on lost focus"
-msgstr ""
+msgstr "Spel bevriezen bij verloren focus"
 
 #: launcher.py:192
 msgid "Mute audio on lost focus"
-msgstr ""
+msgstr "Geluid uitschakelen bij verloren focus"
 
 #: launcher.py:193
 msgid "Pause music on game pause"
-msgstr ""
+msgstr "Pauzeer muziek bij spelpauze"
 
 #: launcher.py:194
 msgid "Unlock cursor on game pause"
-msgstr ""
+msgstr "Ontgrendel cursor op spelpauze"
 
 #: launcher.py:195
 msgid "Lock cursor in possession"
-msgstr ""
+msgstr "Vergrendel cursor in wezenbeheersing"
 
 #: launcher.py:208
 msgid "Basic"
-msgstr ""
+msgstr "basis"
 
 #: launcher.py:216 launcher.py:245 launcher.py:249 launcher.py:254
 msgid "Run Options"
-msgstr ""
+msgstr "start opties"
 
 #: launcher.py:218 launcher.py:248 launcher.py:250 launcher.py:253
 msgid "Settings"
-msgstr ""
+msgstr "Instellingen"
 
 #: launcher.py:221
 msgid "Readme"
-msgstr ""
+msgstr "Readme"
 
 #: launcher.py:223
 msgid "Open Log"
-msgstr ""
+msgstr "Open Log"
 
 #: launcher.py:231
 msgid "Start"
@@ -390,9 +394,13 @@ msgid ""
 "please place file in same folder\n"
 "as your keeperfx installation"
 msgstr ""
+"plaats het bestand in dezelfde map\n"
+"als uw keeperfx installatie"
 
 #: launcher.py:304
 msgid ""
 "files from orininal missing,\n"
 "press install to copy them"
 msgstr ""
+"bestanden van het origineel ontbreken,\n"
+"druk op install om ze te kopiëren"
