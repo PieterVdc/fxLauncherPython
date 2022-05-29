@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: 2022-05-26 12:06+0200\n"
-"PO-Revision-Date: 2022-05-29 12:56+0200\n"
+"PO-Revision-Date: 2022-05-29 20:53+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -91,13 +91,13 @@ msgid ""
 " But if the game will crash, the LOG file may help the developers to fix the "
 "problem."
 msgstr ""
-"Vous voulez généralement une version standard, car elle est rapide et "
-"stable.\n"
-" La version Heavylog enregistre une énorme quantité de messages dans un "
-"fichier « keeperfx.log » pendant que vous jouez.\n"
-" Cela nécessite beaucoup plus de puissance de calcul, donc sur des machines "
-"plus lentes, cela peut affecter gravement la vitesse de jeu.\n"
-" Mais si le jeu se bloque, le fichier LOG peut aider les développeurs à "
+"Vous voulez généralement la version standard, car elle est rapide et "
+"solide.\n"
+" La version Heavylog enregistre un grand nombre de messages dans un fichier "
+"\"keeperfx.log\" pendant que vous jouez.\n"
+" Cela demande beaucoup plus de puissance de calcul, donc sur des machines "
+"plus lentes cela peut affecter sévèrement la vitesse de jeu.\n"
+" Mais si le jeu se plante, le fichier LOG peut aider les développeurs à "
 "résoudre le problème."
 
 #: launcher.py:107
@@ -107,11 +107,11 @@ msgid ""
 "Use this option for skirmish - single player levels won't work properly with "
 "it, unless they were especially designed for human to play as another keeper."
 msgstr ""
-"Modifiez l’ID du joueur humain. Cela vous permet de jouer en tant que "
-"gardien bleu, vert ou jaune.\n"
-"Utilisez cette option pour l’escarmouche - les niveaux solo ne "
-"fonctionneront pas correctement avec elle, à moins qu’ils n’aient été "
-"spécialement conçus pour que les humains puissent jouer en tant que gardien."
+"Changer l'ID du joueur humain. Cela vous permet de jouer en tant que gardien "
+"bleu, vert ou jaune.\n"
+"Utilisez cette option pour les escarmouches - les niveaux solo ne "
+"fonctionneront pas correctement avec cette option, à moins qu'ils n'aient "
+"été spécialement conçus pour qu'un humain puisse incarner un autre gardien."
 
 #: launcher.py:115
 msgid "Do not show intro movie on startup"
@@ -142,10 +142,10 @@ msgid ""
 "Turn it off to get straight lines. Choose \"liquid only\" to still get waves "
 "in lava and water."
 msgstr ""
-"Wibble tord et tourne les blocs droits qui composent le monde des gardiens "
-"de donjon.\n"
-"Éteignez-le pour obtenir des lignes droites. Choisissez « liquide "
-"seulement » pour obtenir encore des vagues dans la lave et l’eau."
+"Wibble tord et retourne les blocs droits qui composent le monde de Dungeon "
+"Keeper.\n"
+"Désactivez-le pour obtenir des lignes droites. Choisissez \"liquide "
+"uniquement\" pour obtenir des vagues dans la lave et l'eau."
 
 #: launcher.py:122
 msgid ""
@@ -153,9 +153,9 @@ msgid ""
 "restrict death effect with exploding flesh.\n"
 "Originally, this was enabled in german language version."
 msgstr ""
-"Permettre la censure ne fera que des créatures maléfiques d’avoir du sang, "
-"et limitera l’effet de la mort avec une chair qui explose.\n"
-"À l’origine, cela était activé dans la version allemande."
+"En activant la censure, seules les créatures maléfiques pourront avoir du "
+"sang et l'effet de mort par explosion de chair sera limité.\n"
+"À l'origine, cette option était activée dans la version allemande."
 
 #: launcher.py:123
 msgid ""
@@ -163,11 +163,11 @@ msgid ""
 "100, setting it to 0 will use your windows default instead.\n"
 "High values may make the mouse less accurate, so be careful!"
 msgstr ""
-"L’augmentation de la sensibilité accélérera la souris dans le jeu. La valeur "
-"par défaut est 100, la définir sur 0 utilisera plutôt la valeur par défaut "
-"de votre fenêtre.\n"
-"Des valeurs élevées peuvent rendre la souris moins précise, alors soyez "
-"prudent!"
+"Augmenter la sensibilité accélérera la souris dans le jeu. La valeur par "
+"défaut est de 100, en la mettant à 0, vous utiliserez la valeur par défaut "
+"de Windows.\n"
+"Les valeurs élevées peuvent rendre la souris moins précise, alors faites "
+"attention !"
 
 #: launcher.py:124
 msgid ""
@@ -175,53 +175,65 @@ msgid ""
 "chosen 'windowed', you may want to unlock your mouse cursor at the run "
 "options."
 msgstr ""
-"Sélectionnez si le jeu doit s’exécuter en plein écran ou sous forme de "
-"fenêtre. Si vous avez choisi « fenêtré », vous pouvez déverrouiller le "
-"curseur de votre souris dans les options d’exécution."
+"Choisissez si le jeu doit s'exécuter en plein écran ou dans une fenêtre. Si "
+"vous avez choisi \"fenêtré\", vous pouvez déverrouiller le curseur de votre "
+"souris au niveau des options d'exécution."
 
 #: launcher.py:125
 msgid "Write changes to \"keeperfx.cfg\" file."
-msgstr ""
+msgstr "Écrire les changements dans le fichier \"keeperfx.cfg\"."
 
 #: launcher.py:126
 msgid ""
 "Enabling Atmospheric sounds will have the game play random background sound "
 "effects, like drips of water and screams of horror, to set the mood."
 msgstr ""
+"Si vous activez les sons d'ambiance, le jeu jouera des effets sonores de "
+"fond aléatoires, comme des gouttes d'eau et des cris d'horreur, pour créer "
+"une ambiance."
 
 #: launcher.py:127
 msgid "Change the volume of the Atmospheric sounds effects."
-msgstr ""
+msgstr "Modifiez le volume des effets sonores atmosphériques."
 
 #: launcher.py:128
 msgid ""
 "Overwrite 'unlock cursor' mode in possession to lock the mouse cursor to the "
 "game window when possessing a creature."
 msgstr ""
+"Écraser le mode \"déverrouillage du curseur\" dans la possession pour "
+"verrouiller le curseur de la souris sur la fenêtre de jeu lors de la "
+"possession d'une créature."
 
 #: launcher.py:129
 msgid ""
 "The game freezes when the window loses focus. Disable to keep playing in "
 "background."
 msgstr ""
+"Le jeu se fige lorsque la fenêtre perd le focus. Désactiver pour continuer à "
+"jouer en arrière-plan."
 
 #: launcher.py:130
 msgid "When the game is paused, pause the music too."
-msgstr ""
+msgstr "Lorsque le jeu est en pause, mettez également la musique en pause."
 
 #: launcher.py:131
 msgid ""
 "When the window loses focus without freezing, still mute the game audio."
 msgstr ""
+"Lorsque la fenêtre perd le focus sans se figer, le son du jeu est toujours "
+"coupé."
 
 #: launcher.py:132
 msgid ""
 "When pausing, the game will release the mouse cursor to use on other windows."
 msgstr ""
+"En cas de pause, le jeu libère le curseur de la souris pour l'utiliser sur "
+"d'autres fenêtres."
 
 #: launcher.py:133
 msgid "Configures how the movies are displayed."
-msgstr ""
+msgstr "Configure l'affichage des films."
 
 #: launcher.py:162
 msgid "Skip Intro"
@@ -232,10 +244,8 @@ msgid "Music From Cd"
 msgstr "Musique du CD"
 
 #: launcher.py:164
-#, fuzzy
-#| msgid "unlock mouse"
 msgid "Unlock mouse"
-msgstr "déverrouiller la souris"
+msgstr "Déverrouillage du curseur"
 
 #: launcher.py:165
 msgid "Heavylog"
